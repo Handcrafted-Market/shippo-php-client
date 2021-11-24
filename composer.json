@@ -1,0 +1,21 @@
+{
+  "name": "handcrafted/shippo-php-client",
+  "description": "A php client wrapper around the shippo API.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matthew Weiner",
+      "email": "mrweiner@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "handcrafted\\shippo-php-client\\": "src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^6.5.2"
+  }
+}
