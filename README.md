@@ -7,7 +7,7 @@ This is very much a work in progress and PRs are welcome.
 All interactions exist on the client object once it's initialized. For instance, you could do the following to create a new shipment.
 
 ```
-$client = new \handcrafted\shippo\Client($this->getApiKey());
+$client = new \handcrafted\shippo\Client('your_api_token');
 
 $shipment = $client->shipment()->create([
   'address_from' => $fromAddress,
