@@ -1,6 +1,6 @@
 <?php
 
-namespace handcrafted\shippo\Resource;
+namespace HandcraftedShippo\Resource;
 
 class Address extends ResourceBase {
 
@@ -10,7 +10,7 @@ class Address extends ResourceBase {
   protected $objectId;
 
   /**
-   * @var \handcrafted\shippo\Resource\ValidationResult|null
+   * @var \HandcraftedShippo\Resource\ValidationResult|null
    */
   protected $validationResults;
 

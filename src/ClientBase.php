@@ -1,6 +1,6 @@
 <?php
 
-namespace handcrafted\shippo;
+namespace HandcraftedShippo;
 
 use GuzzleHttp\Client;
 

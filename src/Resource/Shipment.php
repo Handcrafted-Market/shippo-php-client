@@ -1,6 +1,6 @@
 <?php
 
-namespace handcrafted\shippo\Resource;
+namespace HandcraftedShippo\Resource;
 
 class Shipment extends ResourceBase {
 
@@ -30,22 +30,22 @@ class Shipment extends ResourceBase {
   protected $status;
 
   /**
-   * @var \handcrafted\shippo\Resource\Address
+   * @var \HandcraftedShippo\Resource\Address
    */
   protected $addressFrom;
 
   /**
-   * @var \handcrafted\shippo\Resource\Address
+   * @var \HandcraftedShippo\Resource\Address
    */
   protected $addressTo;
 
   /**
-   * @var \handcrafted\shippo\Resource\Address
+   * @var \HandcraftedShippo\Resource\Address
    */
   protected $addressReturn;
 
   /**
-   * @var \handcrafted\shippo\Resource\Parcel[]
+   * @var \HandcraftedShippo\Resource\Parcel[]
    */
   protected $parcels;
 
@@ -60,7 +60,7 @@ class Shipment extends ResourceBase {
   protected $extra;
 
   /**
-   * @var \handcrafted\shippo\Resource\Address|null
+   * @var \HandcraftedShippo\Resource\Address|null
    */
   protected $alternateAddressTo;
 
@@ -70,7 +70,7 @@ class Shipment extends ResourceBase {
   protected $customsDeclaration;
 
   /**
-   * @var \handcrafted\shippo\Resource\Rate[]
+   * @var \HandcraftedShippo\Resource\Rate[]
    */
   protected $rates;
 
@@ -80,7 +80,7 @@ class Shipment extends ResourceBase {
   protected $carrierAccounts;
 
   /**
-   * @var \handcrafted\shippo\Resource\Message[]
+   * @var \HandcraftedShippo\Resource\Message[]
    */
   protected $messages;
 

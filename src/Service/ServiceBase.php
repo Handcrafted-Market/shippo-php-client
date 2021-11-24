@@ -1,13 +1,13 @@
 <?php
 
-namespace handcrafted\shippo\Service;
+namespace HandcraftedShippo\Service;
 
-use handcrafted\shippo\Client;
+use HandcraftedShippo\Client;
 
 abstract class ServiceBase implements ServiceInterface {
 
   /**
-   * @var \handcrafted\shippo\Client
+   * @var \HandcraftedShippo\Client
    */
   private Client $client;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace handcrafted\shippo\Service;
+namespace HandcraftedShippo\Service;
 
 class Shipment extends ServiceBase {
 
@@ -11,9 +11,9 @@ class Shipment extends ServiceBase {
    *
    * @see https://goshippo.com/docs/reference/php#addresses-create
    */
-  public function create($params): \handcrafted\shippo\Resource\Shipment {
+  public function create($params): \HandcraftedShippo\Resource\Shipment {
     $data = $this->request('post', '/shipments', $params);
-    return new \handcrafted\shippo\Resource\Shipment($data);
+    return new \HandcraftedShippo\Resource\Shipment($data);
   }
 
 }

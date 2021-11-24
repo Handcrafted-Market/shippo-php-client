@@ -1,6 +1,6 @@
 <?php
 
-namespace handcrafted\shippo\Resource;
+namespace HandcraftedShippo\Resource;
 
 class Rate extends ResourceBase {
 

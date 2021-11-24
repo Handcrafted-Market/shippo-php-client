@@ -1,6 +1,6 @@
 <?php
 
-namespace handcrafted\shippo\Service;
+namespace HandcraftedShippo\Service;
 
 interface ServiceInterface {
 
