@@ -1,6 +1,6 @@
 <?php
 
-namespace HandcraftedShippo\Resource;
+namespace Handcrafted\Shippo\Resource;
 
 abstract class ResourceBase implements ResourceInterface {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace HandcraftedShippo\Resource;
+namespace Handcrafted\Shippo\Resource;
 
 class Parcel extends ResourceBase {
 

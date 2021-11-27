@@ -1,8 +1,8 @@
 <?php
 
-namespace HandcraftedShippo;
+namespace Handcrafted\Shippo;
 
-use HandcraftedShippo\Service\Shipment;
+use Handcrafted\Shippo\Service\Shipment;
 
 class Client extends ClientBase {
 

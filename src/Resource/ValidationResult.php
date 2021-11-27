@@ -1,6 +1,6 @@
 <?php
 
-namespace HandcraftedShippo\Resource;
+namespace Handcrafted\Shippo\Resource;
 
 class ValidationResult extends ResourceBase {
 
@@ -10,7 +10,7 @@ class ValidationResult extends ResourceBase {
   protected $isValid;
 
   /**
-   * @var \HandcraftedShippo\Resource\Message[]
+   * @var \Handcrafted\Shippo\Resource\Message[]
    */
   protected $messages;
 
