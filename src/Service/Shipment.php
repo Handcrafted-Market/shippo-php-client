@@ -19,13 +19,13 @@ class Shipment extends ServiceBase {
   /**
    * Gets a shipment.
    *
-   * @param string $shipment_id - The request parameters.
+   * @param string $id - The shipment ID.
    *
    * @see https://goshippo.com/docs/reference/php#shipments-retrieve
    */
-  public function get(string $shipment_id):
+  public function get(string $id):
   \Handcrafted\Shippo\Resource\Shipment {
-    $data = $this->request('get', "/shipments/$shipment_id");
+    $data = $this->request('get', "/shipments/$id");
     return new \Handcrafted\Shippo\Resource\Shipment($data);
   }
 
@@ -38,7 +38,7 @@ class Shipment extends ServiceBase {
    *   - object_created_lt - object(s) created less than a provided date time
    *   - object_created_lte - object(s) created less than or equal to a provided date time
    *
-   * @see https://goshippo.com/docs/reference/php#shipments-retrieve
+   * @see https://goshippo.com/docs/reference/php#shipments-list
    */
   public function listAll(?array $path_params):
   \Handcrafted\Shippo\Resource\Pager {
