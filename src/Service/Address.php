@@ -47,11 +47,10 @@ class Address extends ServiceBase {
    *
    * @see https://goshippo.com/docs/reference/php#addresses-list
    */
-  public function listAll(?array $path_params):
-  \Handcrafted\Shippo\Resource\Pager {
+  public function listAll():
+  \Handcrafted\Shippo\Resource\Pager\PagerBase {
     $data = $this->request('get', "/addresses");
-
-    return new \Handcrafted\Shippo\Resource\Pager($data);
+    return new \Handcrafted\Shippo\Resource\Pager\AddressPager($data);
   }
 
 }

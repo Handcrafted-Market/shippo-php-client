@@ -41,13 +41,13 @@ class Shipment extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#shipments-list
    */
   public function listAll(?array $path_params):
-  \Handcrafted\Shippo\Resource\Pager {
+  \Handcrafted\Shippo\Resource\Pager\PagerBase {
     $request_params = !empty($path_params)
       ? ['query' => $path_params]
       : NULL;
     $data = $this->request('get', "/shipments", $request_params);
 
-    return new \Handcrafted\Shippo\Resource\Pager($data);
+    return new \Handcrafted\Shippo\Resource\Pager\ShipmentPager($data);
   }
 
   /**
@@ -58,9 +58,9 @@ class Shipment extends ServiceBase {
    *
    * @see https://goshippo.com/docs/reference/php#rates-get
    */
-  public function getRates(string $shipment_id, string $currency_code): \Handcrafted\Shippo\Resource\Pager {
+  public function getRates(string $shipment_id, string $currency_code): \Handcrafted\Shippo\Resource\Pager\PagerBase {
     $data = $this->request('get', "/shipments/$shipment_id/rates/$currency_code");
-    return new \Handcrafted\Shippo\Resource\Pager($data);
+    return new \Handcrafted\Shippo\Resource\Pager\RatePager($data);
   }
 
 }

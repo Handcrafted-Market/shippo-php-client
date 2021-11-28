@@ -1,8 +1,10 @@
 <?php
 
-namespace Handcrafted\Shippo\Resource;
+namespace Handcrafted\Shippo\Resource\Pager;
 
-class Pager extends ResourceBase {
+use Handcrafted\Shippo\Resource\ResourceBase;
+
+abstract class PagerBase extends ResourceBase {
 
   /**
    * @var string
