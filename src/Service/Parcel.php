@@ -38,6 +38,5 @@ class Parcel extends ServiceBase {
   \Handcrafted\Shippo\Resource\Pager {
     return $this->request('get', "/parcels");
   }
-
-
+  
 }
