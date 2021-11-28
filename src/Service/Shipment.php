@@ -50,5 +50,17 @@ class Shipment extends ServiceBase {
     return new \Handcrafted\Shippo\Resource\Pager($data);
   }
 
+  /**
+   * Gets the rates for a shipment.
+   *
+   * @param string $shipment_id - The shipment ID.
+   * @param string $currency_code - The currency code..
+   *
+   * @see https://goshippo.com/docs/reference/php#rates-get
+   */
+  public function getRates(string $shipment_id, string $currency_code): \Handcrafted\Shippo\Resource\Pager {
+    $data = $this->request('get', "/shipments/$shipment_id/rates/$currency_code");
+    return new \Handcrafted\Shippo\Resource\Pager($data);
+  }
 
 }
