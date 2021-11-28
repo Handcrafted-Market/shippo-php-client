@@ -1,0 +1,3 @@
+Need to add classes that correspond to the extras
+associated with each resource/service, but it's probably
+more pertinent to finish up the actual services first.
