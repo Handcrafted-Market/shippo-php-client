@@ -7,75 +7,74 @@ class Shipment extends ObjectUpdatedResourceBase {
   /**
    * @var string
    */
-  protected $status;
+  public readonly $status;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
    */
-  protected $addressFrom;
+  public readonly $addressFrom;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
    */
-  protected $addressTo;
+  public readonly $addressTo;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
    */
-  protected $addressReturn;
+  public readonly $addressReturn;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Parcel[]
    */
-  protected $parcels;
+  public readonly $parcels;
 
   /**
    * @var string
    */
-  protected $shipmentDate;
+  public readonly $shipmentDate;
 
   /**
    * @var \stdClass
    */
-  protected $extra;
+  public readonly $extra;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address|null
    */
-  protected $alternateAddressTo;
+  public readonly $alternateAddressTo;
 
   /**
    * @var mixed|null - The docs don't describe this.
    */
-  protected $customsDeclaration;
+  public readonly $customsDeclaration;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Rate[]
    */
-  protected $rates;
+  public readonly $rates;
 
   /**
    * @var array
    */
-  protected $carrierAccounts;
+  public readonly $carrierAccounts;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Message[]
    */
-  protected $messages;
+  public readonly $messages;
 
   /**
    * @var string|mixed
    */
-  protected $metadata;
+  public readonly $metadata;
 
   /**
    * @var bool
    */
-  protected $test;
+  public readonly $test;
 
   public function __construct($data) {
-    parent::__construct($data);
     $this->addressFrom = new Address($data->address_from);
     $this->addressTo = new Address($data->address_to);
     $this->addressReturn = new Address($data->address_return);
@@ -95,78 +94,7 @@ class Shipment extends ObjectUpdatedResourceBase {
       return new Message($m);
     }, $data->messages);
 
-  }
-
-  public function getObjectCreated() {
-    return $this->objectCreated;
-  }
-
-  public function getObjectUpdated() {
-    return $this->objectUpdated;
-  }
-
-  public function getObjectId() {
-    return $this->objectId;
-  }
-
-  public function getObjectOwner() {
-    return $this->objectOwner;
-  }
-
-  public function getStatus() {
-    return $this->status;
-  }
-
-  public function getAddressFrom() {
-    return $this->addressFrom;
-  }
-
-  public function getAddressTo() {
-    return $this->addressTo;
-  }
-
-  public function getAddressReturn() {
-    return $this->addressReturn;
-  }
-
-  public function getParcels() {
-    return $this->parcels;
-  }
-
-  public function getShipmentDate() {
-    return $this->shipmentDate;
-  }
-
-  public function getExtra() {
-    return $this->extra;
-  }
-
-  public function getAlternateAddressTo() {
-    return $this->alternateAddressTo;
-  }
-
-  public function getCustomsDeclaration() {
-    return $this->customsDeclaration;
-  }
-
-  public function getRates() {
-    return $this->rates;
-  }
-
-  public function getCarrierAccounts() {
-    return $this->carrierAccounts;
-  }
-
-  public function getMessages() {
-    return $this->messages;
-  }
-
-  public function getMetadata() {
-    return $this->metadata;
-  }
-
-  public function getTest() {
-    return $this->test;
+    parent::__construct($data);
   }
 
 }

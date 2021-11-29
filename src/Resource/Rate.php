@@ -7,81 +7,81 @@ class Rate extends ObjectResourceBase {
   /**
    * @var string
    */
-  protected $shipment;
+  public readonly $shipment;
 
   /**
    * @var array
    */
-  protected $attributes;
+  public readonly $attributes;
 
   /**
    * @var string
    */
-  protected $amountLocal;
+  public readonly $amountLocal;
 
   /**
    * @var string
    */
-  protected $currencyLocal;
+  public readonly $currencyLocal;
 
   /**
    * @var string
    */
-  protected $amount;
+  public readonly $amount;
 
   /**
    * @var string
    */
-  protected $currency;
+  public readonly $currency;
 
   /**
    * @var string
    */
-  protected $provider;
+  public readonly $provider;
 
   /**
    * @var string
    */
-  protected $providerImage75;
+  public readonly $providerImage75;
 
   /**
    * @var string
    */
-  protected $providerImage200;
+  public readonly $providerImage200;
 
   /**
    * @var \stdClass|mixed
    */
-  protected $serviceLevel;
+  public readonly $serviceLevel;
 
   /**
    * @var integer
    */
-  protected $estimatedDays;
+  public readonly $estimatedDays;
 
   /**
    * @var string
    */
-  protected $durationTerms;
+  public readonly $durationTerms;
 
   /**
    * @var string
    */
-  protected $carrierAccount;
+  public readonly $carrierAccount;
 
   /**
    * @var string
    */
-  protected $zone;
+  public readonly $zone;
 
   /**
    * @var array
    */
-  protected $messages;
+  public readonly $messages;
 
   /**
    * @var bool
    */
-  protected $test;
+  public readonly $test;
 
 }

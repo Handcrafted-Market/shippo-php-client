@@ -7,6 +7,6 @@ class RatePager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Rate[]
    */
-  protected $results;
+  public readonly $results;
 
 }

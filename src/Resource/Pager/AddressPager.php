@@ -7,6 +7,6 @@ class AddressPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Address[]
    */
-  protected $results;
+  public readonly $results;
 
 }

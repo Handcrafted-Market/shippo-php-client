@@ -7,16 +7,16 @@ class Refund extends ObjectUpdatedResourceBase {
   /**
    * @var string
    */
-  protected $status;
+  public readonly $status;
 
   /**
    * @var string
    */
-  protected $transaction;
+  public readonly $transaction;
 
   /**
    * @var bool
    */
-  protected $test;
+  public readonly $test;
 
 }

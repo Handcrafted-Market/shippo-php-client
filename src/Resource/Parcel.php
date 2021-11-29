@@ -7,61 +7,61 @@ class Parcel extends ObjectUpdatedResourceBase {
   /**
    * @var string
    */
-  protected $objectState;
+  public readonly $objectState;
 
   /**
    * @var mixed|null
    */
-  protected $template;
+  public readonly $template;
 
   /**
    * @var string
    */
-  protected $length;
+  public readonly $length;
 
   /**
    * @var string
    */
-  protected $width;
+  public readonly $width;
 
   /**
    * @var string
    */
-  protected $height;
+  public readonly $height;
 
   /**
    * @var string
    */
-  protected $distanceUnit;
+  public readonly $distanceUnit;
 
   /**
    * @var string
    */
-  protected $weight;
+  public readonly $weight;
 
   /**
    * @var string
    */
-  protected $massUnit;
+  public readonly $massUnit;
 
   /**
    * @var string
    */
-  protected $metadata;
+  public readonly $metadata;
 
   /**
    * @var mixed
    */
-  protected $extra;
+  public readonly $extra;
 
   /**
    * @var array
    */
-  protected $lineItems;
+  public readonly $lineItems;
 
   /**
    * @var bool
    */
-  protected $test;
+  public readonly $test;
 
 }

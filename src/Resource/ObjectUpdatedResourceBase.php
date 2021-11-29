@@ -7,8 +7,8 @@ abstract class ObjectUpdatedResourceBase extends ObjectResourceBase {
   /**
    * @var string
    */
-  protected string $objectUpdated;
-  
+  public readonly string $objectUpdated;
+
   public function updated(): string {
     return $this->objectUpdated;
   }

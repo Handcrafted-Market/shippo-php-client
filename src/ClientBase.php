@@ -11,7 +11,7 @@ abstract class ClientBase {
    *
    * @var string
    */
-  protected $baseUrl = 'https://api.goshippo.com';
+  public readonly $baseUrl = 'https://api.goshippo.com';
 
   /**
    * The key (or "token") to use for the requests.

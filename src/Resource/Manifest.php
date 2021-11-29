@@ -7,41 +7,41 @@ class Manifest extends ObjectUpdatedResourceBase {
   /**
    * @var string
    */
-  protected string $status;
+  public readonly string $status;
 
   /**
    * @var \Handcrafted\Shippo\Meta\ManifestError[]
    */
-  protected array $errors;
+  public readonly array $errors;
 
   /**
    * @var string
    */
-  protected string $carrierAccount;
+  public readonly string $carrierAccount;
 
   /**
    * @var string
    */
-  protected string $shipmentDate;
+  public readonly string $shipmentDate;
 
   /**
    * @var string
    */
-  protected string $addressFrom;
+  public readonly string $addressFrom;
 
   /**
    * @var string
    */
-  protected string $addressTo;
+  public readonly string $addressTo;
 
   /**
    * @var string[]
    */
-  protected array $transctions;
+  public readonly array $transctions;
 
   /**
    * @var array[]
    */
-  protected array $documents;
+  public readonly array $documents;
 
 }

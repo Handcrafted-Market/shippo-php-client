@@ -7,17 +7,17 @@ abstract class ObjectResourceBase extends ResourceBase {
   /**
    * @var string
    */
-  protected string $objectCreated;
+  public readonly string $objectCreated;
 
   /**
    * @var string
    */
-  protected string $objectId;
+  public readonly string $objectId;
 
   /**
    * @var string
    */
-  protected string $objectOwner;
+  public readonly string $objectOwner;
 
   public function created(): string {
     return $this->objectCreated;

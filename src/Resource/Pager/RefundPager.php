@@ -7,6 +7,6 @@ class RefundPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Refund[]
    */
-  protected $results;
+  public readonly $results;
 
 }

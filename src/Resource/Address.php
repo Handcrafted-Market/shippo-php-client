@@ -7,76 +7,76 @@ class Address extends ResourceBase {
   /**
    * @var string|null
    */
-  protected $objectId;
+  public readonly $objectId;
 
   /**
    * @var \Handcrafted\Shippo\Resource\ValidationResult|null
    */
-  protected $validationResults;
+  public readonly $validationResults;
 
   /**
    * @var string
    */
-  protected $name;
+  public readonly $name;
 
   /**
    * @var string
    */
-  protected $company;
+  public readonly $company;
 
   /**
    * @var string
    */
-  protected $streetNo;
+  public readonly $streetNo;
 
   /**
    * @var string
    */
-  protected $street1;
+  public readonly $street1;
 
   /**
    * @var string
    */
-  protected $street2;
+  public readonly $street2;
 
   /**
    * @var string
    */
-  protected $street3;
+  public readonly $street3;
 
   /**
    * @var string
    */
-  protected $city;
+  public readonly $city;
 
   /**
    * @var string
    */
-  protected $state;
+  public readonly $state;
 
   /**
    * @var string
    */
-  protected $zip;
+  public readonly $zip;
 
   /**
    * @var string
    */
-  protected $country;
+  public readonly $country;
 
   /**
    * @var string
    */
-  protected $phone;
+  public readonly $phone;
 
   /**
    * @var string
    */
-  protected $email;
+  public readonly $email;
 
   /**
    * @var string|null
    */
-  protected $isResidential;
+  public readonly $isResidential;
 
 }

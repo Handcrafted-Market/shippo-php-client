@@ -7,21 +7,21 @@ class Message extends ResourceBase {
   /**
    * @var string
    */
-  protected $source;
+  public readonly $source;
 
   /**
    * @var string
    */
-  protected $code;
+  public readonly $code;
 
   /**
    * @var string
    */
-  protected $type;
+  public readonly $type;
 
   /**
    * @var string
    */
-  protected $text;
+  public readonly $text;
 
 }

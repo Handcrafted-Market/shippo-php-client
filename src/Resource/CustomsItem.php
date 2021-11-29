@@ -7,66 +7,66 @@ class CustomsItem extends ObjectUpdatedResourceBase {
   /**
    * @var string
    */
-  protected $objectState;
+  public readonly $objectState;
 
   /**
    * @var string
    */
-  protected $description;
+  public readonly $description;
 
   /**
    * @var int
    */
-  protected $quantity;
+  public readonly $quantity;
 
   /**
    * @var string
    */
-  protected $netWeight;
+  public readonly $netWeight;
 
   /**
    * @var string
    */
-  protected $massUnit;
+  public readonly $massUnit;
 
   /**
    * @var string
    */
-  protected $valueAmount;
+  public readonly $valueAmount;
 
   /**
    * @var string
    */
-  protected $valueCurrency;
+  public readonly $valueCurrency;
 
   /**
    * @var string
    */
-  protected $tarifNumber;
+  public readonly $tarifNumber;
 
   /**
    * @var string|null
    */
-  protected $skuCode;
+  public readonly $skuCode;
 
   /**
    * @var string
    */
-  protected $originCountry;
+  public readonly $originCountry;
 
   /**
    * @var string
    */
-  protected $eccnEar99;
+  public readonly $eccnEar99;
 
   /**
    * @var string
    */
-  protected $metadata;
+  public readonly $metadata;
 
   /**
    * @var bool
    */
-  protected $test;
+  public readonly $test;
 
 }

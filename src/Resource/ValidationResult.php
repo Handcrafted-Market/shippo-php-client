@@ -7,11 +7,11 @@ class ValidationResult extends ResourceBase {
   /**
    * @var bool
    */
-  protected $isValid;
+  public readonly $isValid;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Message[]
    */
-  protected $messages;
+  public readonly $messages;
 
 }

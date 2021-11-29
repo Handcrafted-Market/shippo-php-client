@@ -4,31 +4,31 @@ namespace Handcrafted\Shippo\Resource;
 
 class Transaction extends ObjectResourceBase {
 
-  protected $objectState;
+  public readonly $objectState;
 
-  protected $status;
+  public readonly $status;
 
-  protected $test;
+  public readonly $test;
 
-  protected $rate;
+  public readonly $rate;
 
-  protected $trackingNumber;
+  public readonly $trackingNumber;
 
-  protected $trackingStatus;
+  public readonly $trackingStatus;
 
-  protected $trackingUrlProvided;
+  public readonly $trackingUrlProvided;
 
-  protected $eta;
+  public readonly $eta;
 
-  protected $labelUrl;
+  public readonly $labelUrl;
 
-  protected $commercialInvoiceUrl;
+  public readonly $commercialInvoiceUrl;
 
-  protected $metadata;
+  public readonly $metadata;
 
-  protected $messages;
+  public readonly $messages;
 
-  protected $qrCodeUrl;
+  public readonly $qrCodeUrl;
 
   public function __construct($data) {
     parent::__construct($data);

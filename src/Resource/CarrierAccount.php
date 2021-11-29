@@ -4,18 +4,18 @@ namespace Handcrafted\Shippo\Resource;
 
 class CarrierAccount extends ResourceBase {
 
-  protected string $objectId;
+  public readonly string $objectId;
 
-  protected string $objectOwner;
+  public readonly string $objectOwner;
 
-  protected string $carrier;
+  public readonly string $carrier;
 
-  protected string $accountId;
+  public readonly string $accountId;
 
   /**
    * @var string[]
    */
-  protected array $parameters;
+  public readonly array $parameters;
 
   protected bool $test;
 

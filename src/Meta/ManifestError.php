@@ -6,9 +6,9 @@ use Handcrafted\Shippo\Mapper;
 
 class ManifestError extends Mapper {
 
-  protected string $code;
+  public readonly string $code;
 
-  protected string $message;
+  public readonly string $message;
 
   public function code() {
     return $this->code;
