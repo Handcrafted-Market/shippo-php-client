@@ -10,7 +10,7 @@ class Manifest extends ObjectUpdatedResourceBase {
   protected string $status;
 
   /**
-   * @var array
+   * @var \Handcrafted\Shippo\Meta\ManifestError[]
    */
   protected array $errors;
 
