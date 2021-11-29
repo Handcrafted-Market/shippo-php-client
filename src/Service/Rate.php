@@ -26,7 +26,7 @@ class Rate extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#rates-get
    */
   public function getRatesForShipment(string $shipment_id, string $currency_code): \Handcrafted\Shippo\Resource\Pager\PagerBase {
-    return $this->getClient()->shipment()->getRates($shipment_id, $currency_code);
+    return $this->client->shipment->getRates($shipment_id, $currency_code);
   }
 
 }

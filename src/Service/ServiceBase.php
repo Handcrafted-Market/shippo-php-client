@@ -9,14 +9,10 @@ abstract class ServiceBase implements ServiceInterface {
   /**
    * @var \Handcrafted\Shippo\Client
    */
-  private Client $client;
+  public readonly Client $client;
 
   public function __construct(Client $client) {
     $this->client = $client;
-  }
-
-  public function getClient() {
-    return $this->client;
   }
 
   protected function request(string $method, string $endpoint_uri, ?array $params = NULL) {

@@ -11,14 +11,14 @@ abstract class ClientBase {
    *
    * @var string
    */
-  public readonly $baseUrl = 'https://api.goshippo.com';
+  public readonly string $baseUrl = 'https://api.goshippo.com';
 
   /**
    * The key (or "token") to use for the requests.
    *
    * @var string
    */
-  private $apiKey;
+  public readonly string $apiKey;
 
   /**
    * The version of the API that this wrapper was built for.
@@ -29,14 +29,14 @@ abstract class ClientBase {
    *
    * @var string
    */
-  private $apiVersion = '2018-02-08';
+  public readonly string $apiVersion;
 
   /**
    * The guzzle http client.
    *
    * @var \GuzzleHttp\Client
    */
-  private $guzzleClient;
+  private readonly Client $guzzleClient;
 
   /**
    * Creates an API instance and sets up the guzzle client.
@@ -58,7 +58,7 @@ abstract class ClientBase {
    * Makes a request to the api.
    *
    * @param string $method
-   *   The request method. GET, POST, or PUT..
+   *   The request method. GET, POST, or PUT.
    * @param string $endpoint_uri
    *   The url of the request.
    * @param array|null $params
@@ -70,20 +70,6 @@ abstract class ClientBase {
     $response = $this->guzzleClient->request($method, $endpoint_uri, ['json' => $params]);
     $contents = $response->getBody()->getContents();
     return \GuzzleHttp\json_decode($contents);
-  }
-
-  /**
-   * Gets the active api token.
-   */
-  public function getApiToken() {
-    return $this->apiKey;
-  }
-
-  /**
-   * Gets the api version.
-   */
-  public function getApiVersion() {
-    return $this->apiVersion;
   }
 
 }

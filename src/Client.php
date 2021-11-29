@@ -46,6 +46,7 @@ class Client extends ClientBase {
 
   public function __construct(string $api_token) {
     parent::__construct($api_token);
+    $this->apiVersion = '2018-02-08';
     $this->address = new Address($this);
     $this->batch = new Batch($this);
     $this->carrierAccount = new CarrierAccount($this);
