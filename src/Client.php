@@ -2,40 +2,63 @@
 
 namespace Handcrafted\Shippo;
 
+use Handcrafted\Shippo\Service\Batch;
+use Handcrafted\Shippo\Service\CarrierAccount;
+use Handcrafted\Shippo\Service\CustomsItem;
+use Handcrafted\Shippo\Service\Manifest;
+use Handcrafted\Shippo\Service\Order;
 use Handcrafted\Shippo\Service\Parcel;
+use Handcrafted\Shippo\Service\Pickup;
 use Handcrafted\Shippo\Service\Rate;
+use Handcrafted\Shippo\Service\Refund;
 use Handcrafted\Shippo\Service\Shipment;
 use \Handcrafted\Shippo\Service\Address;
+use Handcrafted\Shippo\Service\TrackingStatus;
+use Handcrafted\Shippo\Service\Transaction;
 
 class Client extends ClientBase {
 
-  /**
-   * @return \Handcrafted\Shippo\Service\Shipment - The shipment service.
-   */
-  public function shipment(): Shipment {
-    return new Shipment($this);
-  }
+  public readonly Address $address;
 
-  /**
-   * @return \Handcrafted\Shippo\Service\Address - The address service.
-   */
-  public function address(): Address {
-    return new Address($this);
-  }
+  public readonly Batch $batch;
 
-  /**
-   * @return \Handcrafted\Shippo\Service\Parcel - The parcel service.
-   */
-  public function parcel(): Parcel {
-    return new Parcel($this);
-  }
+  public readonly CarrierAccount $carrierAccount;
 
-  /**
-   * @return \Handcrafted\Shippo\Service\Rate - The rate service.
-   */
-  public function rate(): Rate {
-    return new Rate($this);
-  }
+  public readonly CustomsItem $customsItem;
 
+  public readonly Manifest $manifest;
+
+  public readonly Order $order;
+
+  public readonly Parcel $parcel;
+
+  public readonly Pickup $pickup;
+
+  public readonly Rate $rate;
+
+  public readonly Refund $refund;
+
+  public readonly Shipment $shipment;
+
+  public readonly TrackingStatus $trackingStatus;
+
+  public readonly Transaction $transaction;
+
+  public function __construct(string $api_token) {
+    parent::__construct($api_token);
+    $this->address = new Address($this);
+    $this->batch = new Batch($this);
+    $this->carrierAccount = new CarrierAccount($this);
+    $this->customsItem = new CustomsItem($this);
+    $this->manifest = new Manifest($this);
+    $this->order = new Order($this);
+    $this->parcel = new Parcel($this);
+    $this->pickup = new Pickup($this);
+    $this->rate = new Rate($this);
+    $this->refund = new Refund($this);
+    $this->shipment = new Shipment($this);
+    $this->trackingStatus = new TrackingStatus($this);
+    $this->transaction = new Transaction($this);
+  }
 
 }
