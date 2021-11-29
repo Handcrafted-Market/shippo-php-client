@@ -18,6 +18,13 @@ abstract class Mapper {
     foreach ($sourceProperties as $sourceProperty) {
       $name = $sourceProperty->getName();
       $nameCamel = self::toCamelCase($name);
+
+      // Since everything is built on readonly props,
+      // we need to make sure that we don't attempt
+      // to write to pre-set properties.
+      if (isset($this->{$nameCamel})) {
+        continue;
+      }
       $this->{$nameCamel} = $source->$name;
     }
   }

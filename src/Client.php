@@ -2,8 +2,10 @@
 
 namespace Handcrafted\Shippo;
 
+use Handcrafted\Shippo\Service\Address;
 use Handcrafted\Shippo\Service\Batch;
 use Handcrafted\Shippo\Service\CarrierAccount;
+use Handcrafted\Shippo\Service\CustomsDeclaration;
 use Handcrafted\Shippo\Service\CustomsItem;
 use Handcrafted\Shippo\Service\Manifest;
 use Handcrafted\Shippo\Service\Order;
@@ -12,7 +14,6 @@ use Handcrafted\Shippo\Service\Pickup;
 use Handcrafted\Shippo\Service\Rate;
 use Handcrafted\Shippo\Service\Refund;
 use Handcrafted\Shippo\Service\Shipment;
-use \Handcrafted\Shippo\Service\Address;
 use Handcrafted\Shippo\Service\TrackingStatus;
 use Handcrafted\Shippo\Service\Transaction;
 
@@ -25,6 +26,8 @@ class Client extends ClientBase {
   public readonly CarrierAccount $carrierAccount;
 
   public readonly CustomsItem $customsItem;
+
+  public readonly CustomsDeclaration $customsDeclaration;
 
   public readonly Manifest $manifest;
 
@@ -52,6 +55,7 @@ class Client extends ClientBase {
     $this->batch = new Batch($this);
     $this->carrierAccount = new CarrierAccount($this);
     $this->customsItem = new CustomsItem($this);
+    $this->customsDeclaration = new CustomsDeclaration($this);
     $this->manifest = new Manifest($this);
     $this->order = new Order($this);
     $this->parcel = new Parcel($this);
