@@ -2,17 +2,11 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class Transaction extends ResourceBase {
+class Transaction extends ObjectResourceBase {
 
   protected $objectState;
 
   protected $status;
-
-  protected $objectCreated;
-
-  protected $objectId;
-
-  protected $objectOwner;
 
   protected $test;
 

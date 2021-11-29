@@ -2,22 +2,7 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class Rate extends ResourceBase {
-
-  /**
-   * @var string
-   */
-  protected $objectCreated;
-
-  /**
-   * @var string
-   */
-  protected $objectId;
-
-  /**
-   * @var string
-   */
-  protected $objectOwner;
+class Rate extends ObjectResourceBase {
 
   /**
    * @var string

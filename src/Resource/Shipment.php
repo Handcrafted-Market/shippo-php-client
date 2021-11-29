@@ -2,27 +2,7 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class Shipment extends ResourceBase {
-
-  /**
-   * @var string
-   */
-  protected $objectCreated;
-
-  /**
-   * @var string
-   */
-  protected $objectUpdated;
-
-  /**
-   * @var string
-   */
-  protected $objectId;
-
-  /**
-   * @var string
-   */
-  protected $objectOwner;
+class Shipment extends ObjectUpdatedResourceBase {
 
   /**
    * @var string

@@ -2,32 +2,12 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class Parcel extends ResourceBase {
+class Parcel extends ObjectUpdatedResourceBase {
 
   /**
    * @var string
    */
   protected $objectState;
-
-  /**
-   * @var string
-   */
-  protected $objectCreated;
-
-  /**
-   * @var string
-   */
-  protected $objectUpdated;
-
-  /**
-   * @var string
-   */
-  protected $objectId;
-
-  /**
-   * @var string
-   */
-  protected $objectOwner;
 
   /**
    * @var mixed|null
