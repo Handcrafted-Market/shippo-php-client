@@ -2,7 +2,27 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class CustomsItem extends ObjectUpdatedResourceBase {
+class CustomsItem extends ResourceBase {
+
+  /**
+   * @var string
+   */
+  public readonly string $objectCreated;
+
+  /**
+   * @var string
+   */
+  public readonly string $objectId;
+
+  /**
+   * @var string
+   */
+  public readonly string $objectOwner;
+
+  /**
+   * @var string
+   */
+  public readonly string $objectUpdated;
 
   /**
    * @var string
