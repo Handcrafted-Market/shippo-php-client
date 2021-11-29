@@ -1,6 +1,6 @@
 <?php
 
-namespace Handcrafted\Shippo\Resource\Pager;
+namespace Handcrafted\Shippo\Pager;
 
 class ManifestPager extends PagerBase {
 

@@ -10,7 +10,7 @@ class Address extends ResourceBase {
   public readonly $objectId;
 
   /**
-   * @var \Handcrafted\Shippo\Resource\ValidationResult|null
+   * @var \Handcrafted\Shippo\Meta\ValidationResult|null
    */
   public readonly $validationResults;
 

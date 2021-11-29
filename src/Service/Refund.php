@@ -2,8 +2,8 @@
 
 namespace Handcrafted\Shippo\Service;
 
-use Handcrafted\Shippo\Resource\Pager\ParcelPager;
-use Handcrafted\Shippo\Resource\Pager\RefundPager;
+use Handcrafted\Shippo\Pager\ParcelPager;
+use Handcrafted\Shippo\Pager\RefundPager;
 
 class Refund extends ServiceBase {
 
@@ -38,7 +38,7 @@ class Refund extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#refunds-list
    */
   public function listAll():
-  \Handcrafted\Shippo\Resource\Pager\RefundPager {
+  \Handcrafted\Shippo\Pager\RefundPager {
     $data = $this->request('get', "/refunds");
     return new RefundPager($data);
   }

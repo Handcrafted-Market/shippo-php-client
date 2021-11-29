@@ -48,9 +48,9 @@ class Address extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#addresses-list
    */
   public function listAll():
-  \Handcrafted\Shippo\Resource\Pager\PagerBase {
+  \Handcrafted\Shippo\Pager\PagerBase {
     $data = $this->request('get', "/addresses");
-    return new \Handcrafted\Shippo\Resource\Pager\AddressPager($data);
+    return new \Handcrafted\Shippo\Pager\AddressPager($data);
   }
 
 }

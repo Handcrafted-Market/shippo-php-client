@@ -19,7 +19,7 @@ class Order extends ResourceBase {
   public readonly Address $fromAddress;
 
   /**
-   * @var \Handcrafted\Shippo\Resource\LineItem[]
+   * @var \Handcrafted\Shippo\Meta\LineItem[]
    */
   public readonly array $lineItems;
 

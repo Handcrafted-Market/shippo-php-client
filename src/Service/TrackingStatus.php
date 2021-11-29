@@ -2,7 +2,7 @@
 
 namespace Handcrafted\Shippo\Service;
 
-use Handcrafted\Shippo\Resource\Pager\ParcelPager;
+use Handcrafted\Shippo\Pager\ParcelPager;
 
 class TrackingStatus extends ServiceBase {
 

@@ -36,9 +36,9 @@ class Transaction extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#parcels-list
    */
   public function listAll():
-  \Handcrafted\Shippo\Resource\Pager\TransactionPager {
+  \Handcrafted\Shippo\Pager\TransactionPager {
     $data = $this->request('get', "/transactions");
-    return new \Handcrafted\Shippo\Resource\Pager\TransactionPager($data);
+    return new \Handcrafted\Shippo\Pager\TransactionPager($data);
   }
 
 }

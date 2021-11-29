@@ -2,6 +2,8 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Meta\Message;
+
 class Transaction extends ResourceBase {
 
   /**

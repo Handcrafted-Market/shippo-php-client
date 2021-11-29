@@ -38,7 +38,7 @@ class Pickup extends ResourceBase {
   public readonly string $timezone;
 
   /**
-   * @var \Handcrafted\Shippo\Resource\Message[]
+   * @var \Handcrafted\Shippo\Meta\Message[]
    */
   public readonly array $messages;
 

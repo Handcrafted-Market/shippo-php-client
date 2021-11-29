@@ -2,6 +2,8 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Meta\Message;
+
 class Shipment extends ResourceBase {
 
   /**
@@ -80,7 +82,7 @@ class Shipment extends ResourceBase {
   public readonly $carrierAccounts;
 
   /**
-   * @var \Handcrafted\Shippo\Resource\Message[]
+   * @var \Handcrafted\Shippo\Meta\Message[]
    */
   public readonly $messages;
 

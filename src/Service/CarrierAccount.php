@@ -2,8 +2,8 @@
 
 namespace Handcrafted\Shippo\Service;
 
-use Handcrafted\Shippo\Resource\Pager\CarrierAccountPager;
-use Handcrafted\Shippo\Resource\Pager\ParcelPager;
+use Handcrafted\Shippo\Pager\CarrierAccountPager;
+use Handcrafted\Shippo\Pager\ParcelPager;
 
 class CarrierAccount extends ServiceBase {
 
@@ -50,7 +50,7 @@ class CarrierAccount extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#carrier-accounts-list
    */
   public function listAll():
-  \Handcrafted\Shippo\Resource\Pager\CarrierAccountPager {
+  \Handcrafted\Shippo\Pager\CarrierAccountPager {
     $data = $this->request('get', "/carrier_accounts");
     return new CarrierAccountPager($data);
   }

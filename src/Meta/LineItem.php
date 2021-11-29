@@ -1,6 +1,8 @@
 <?php
 
-namespace Handcrafted\Shippo\Resource;
+namespace Handcrafted\Shippo\Meta;
+
+use Handcrafted\Shippo\Resource\ResourceBase;
 
 class LineItem extends ResourceBase {
 

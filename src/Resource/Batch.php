@@ -2,7 +2,7 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-use Handcrafted\Shippo\Resource\Pager\BatchShipmentPager;
+use Handcrafted\Shippo\Pager\BatchShipmentPager;
 
 class Batch extends ResourceBase {
 

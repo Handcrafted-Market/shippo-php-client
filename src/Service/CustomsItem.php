@@ -35,9 +35,9 @@ class CustomsItem extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#customs-items-list
    */
   public function listAll():
-  \Handcrafted\Shippo\Resource\Pager\CustomsItemPager {
+  \Handcrafted\Shippo\Pager\CustomsItemPager {
     $data = $this->request('get', "/customs/items");
-    return new \Handcrafted\Shippo\Resource\Pager\CustomsItemPager($data);
+    return new \Handcrafted\Shippo\Pager\CustomsItemPager($data);
   }
 
 }

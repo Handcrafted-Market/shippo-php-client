@@ -2,7 +2,7 @@
 
 namespace Handcrafted\Shippo\Service;
 
-use Handcrafted\Shippo\Resource\Pager\OrderPager;
+use Handcrafted\Shippo\Pager\OrderPager;
 
 class Order extends ServiceBase {
 
@@ -37,7 +37,7 @@ class Order extends ServiceBase {
    * @see https://goshippo.com/docs/reference/php#orders-list
    */
   public function listAll():
-  \Handcrafted\Shippo\Resource\Pager\OrderPager {
+  \Handcrafted\Shippo\Pager\OrderPager {
     $data = $this->request('get', "/parcels");
     return new OrderPager($data);
   }
