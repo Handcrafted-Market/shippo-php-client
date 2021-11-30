@@ -66,7 +66,7 @@ abstract class ClientBase {
    *
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
-  public function request(string $method, string $endpoint_uri, ?array $params = NULL) {
+  public function request(string $method, string $endpoint_uri, ?array $params = NULL): \stdClass {
     $response = $this->guzzleClient->request($method, $endpoint_uri, ['json' => $params]);
     $contents = $response->getBody()->getContents();
     return \GuzzleHttp\json_decode($contents);

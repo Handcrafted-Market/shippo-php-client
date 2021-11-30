@@ -4,7 +4,7 @@ namespace Handcrafted\Shippo\Service;
 
 use Handcrafted\Shippo\Client;
 
-abstract class ServiceBase implements ServiceInterface {
+abstract class ServiceBase {
 
   /**
    * @var \Handcrafted\Shippo\Client
@@ -15,7 +15,7 @@ abstract class ServiceBase implements ServiceInterface {
     $this->client = $client;
   }
 
-  protected function request(string $method, string $endpoint_uri, ?array $params = NULL) {
+  protected function request(string $method, string $endpoint_uri, ?array $params = NULL): \stdClass {
     return $this->client->request($method, $endpoint_uri, $params);
   }
 
