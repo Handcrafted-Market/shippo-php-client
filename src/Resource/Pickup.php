@@ -2,6 +2,7 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Enum\PickupStatus;
 use Handcrafted\Shippo\Meta\Location;
 use Handcrafted\Shippo\Meta\Message;
 
@@ -32,7 +33,7 @@ class Pickup extends ResourceBase {
 
   public readonly string $cancelByTime;
 
-  public readonly string $status;
+  public readonly PickupStatus $status;
 
   public readonly string $confirmationCode;
 
@@ -50,6 +51,7 @@ class Pickup extends ResourceBase {
   public function __construct(\stdClass $source) {
     $this->location = new Location($source->location);
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
+    $this->status = PickupStatus::from($source->status);
     parent::__construct($source);
   }
 

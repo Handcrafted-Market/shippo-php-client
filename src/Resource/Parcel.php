@@ -2,6 +2,9 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Enum\DistanceUnit;
+use Handcrafted\Shippo\Enum\MassUnit;
+
 class Parcel extends ResourceBase {
 
   /**
@@ -50,9 +53,9 @@ class Parcel extends ResourceBase {
   public readonly string $height;
 
   /**
-   * @var string
+   * @var DistanceUnit
    */
-  public readonly string $distanceUnit;
+  public readonly DistanceUnit $distanceUnit;
 
   /**
    * @var string
@@ -60,9 +63,9 @@ class Parcel extends ResourceBase {
   public readonly string $weight;
 
   /**
-   * @var string
+   * @var MassUnit
    */
-  public readonly string $massUnit;
+  public readonly MassUnit $massUnit;
 
   /**
    * @var string
@@ -78,5 +81,11 @@ class Parcel extends ResourceBase {
    * @var bool
    */
   public readonly bool $test;
+
+  public function __construct(\stdClass $source) {
+    $this->distanceUnit = DistanceUnit::from($source->distance_unit);
+    $this->massUnit = MassUnit::from($source->mass_unit);
+    parent::__construct($source);
+  }
 
 }

@@ -21,7 +21,7 @@ class TrackingStatus extends Mapper {
    *
    * @var string
    */
-  public readonly string $status;
+  public readonly \Handcrafted\Shippo\Enum\TrackingStatus $status;
 
   public readonly string $statusDetails;
 
@@ -31,6 +31,7 @@ class TrackingStatus extends Mapper {
 
   public function __construct(\stdClass $source) {
     $this->location = new AddressSimple($source->location);
+    $this->status = \Handcrafted\Shippo\Enum\TrackingStatus::from($source->status);
     parent::__construct($source);
   }
 

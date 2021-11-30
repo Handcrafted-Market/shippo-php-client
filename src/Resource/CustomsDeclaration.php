@@ -2,12 +2,18 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Enum\B13aFilingOption;
+use Handcrafted\Shippo\Enum\ContentsType;
+use Handcrafted\Shippo\Enum\EelPfc;
+use Handcrafted\Shippo\Enum\Incoterm;
+use Handcrafted\Shippo\Enum\NonDeliveryOption;
+use Handcrafted\Shippo\Enum\Validity;
 use Handcrafted\Shippo\Meta\ExporterIdentification;
 use Handcrafted\Shippo\Meta\InvoicedCharges;
 
 class CustomsDeclaration extends ResourceBase {
 
-  public readonly string $objectState;
+  public readonly Validity $objectState;
 
   public readonly string $objectCreated;
 
@@ -26,9 +32,9 @@ class CustomsDeclaration extends ResourceBase {
    */
   public readonly array $items;
 
-  public readonly string $nonDeliveryOption;
+  public readonly NonDeliveryOption $nonDeliveryOption;
 
-  public readonly string $contentsType;
+  public readonly ContentsType $contentsType;
 
   public readonly string $contentsExplanation;
 
@@ -44,13 +50,13 @@ class CustomsDeclaration extends ResourceBase {
 
   public readonly string $notes;
 
-  public readonly string $eelPfc;
+  public readonly EelPfc $eelPfc;
 
   public readonly string $aesItn;
 
-  public readonly string $incoterm;
+  public readonly Incoterm $incoterm;
 
-  public readonly string $b13aFilingOption;
+  public readonly B13aFilingOption $b13aFilingOption;
 
   public readonly string $b13aNumber;
 
@@ -75,6 +81,13 @@ class CustomsDeclaration extends ResourceBase {
     $this->invoicedCharges = array_map(fn($ic) => new InvoicedCharges($ic), $source->invoiced_charges);
     $this->exporterIdentification = array_map(fn($ei) => new ExporterIdentification($ei),
       $source->exporter_identification);
+
+    $this->objectState = Validity::from($source->object_state);
+    $this->nonDeliveryOption = NonDeliveryOption::from($source->non_delivery_option);
+    $this->contentsType = ContentsType::from($source->contents_type);
+    $this->eelPfc = EelPfc::from($source->eel_pfc);
+    $this->incoterm = Incoterm::from($source->incoterm);
+    $this->b13aFilingOption = B13aFilingOption::from($source->b13a_filing_option);
     parent::__construct($source);
   }
 

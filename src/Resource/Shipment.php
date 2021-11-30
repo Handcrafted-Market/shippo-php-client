@@ -2,6 +2,7 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Enum\ShipmentStatus;
 use Handcrafted\Shippo\Meta\Message;
 
 class Shipment extends ResourceBase {
@@ -27,9 +28,9 @@ class Shipment extends ResourceBase {
   public readonly string $objectUpdated;
 
   /**
-   * @var string
+   * @var ShipmentStatus
    */
-  public readonly string $status;
+  public readonly ShipmentStatus $status;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
@@ -90,7 +91,7 @@ class Shipment extends ResourceBase {
    */
   public readonly bool $test;
 
-  public function __construct($data) {
+  public function __construct($source) {
     $this->addressFrom = new Address($data->address_from);
     $this->addressTo = new Address($data->address_to);
     $this->addressReturn = new Address($data->address_return);
@@ -110,7 +111,8 @@ class Shipment extends ResourceBase {
       return new Message($m);
     }, $data->messages);
 
-    parent::__construct($data);
+    $this->status = ShipmentStatus::from($data->status);
+    parent::__construct($source);
   }
 
 }

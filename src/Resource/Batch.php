@@ -2,11 +2,13 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Enum\BatchStatus;
+use Handcrafted\Shippo\Enum\LabelFileType;
 use Handcrafted\Shippo\Pager\BatchShipmentPager;
 
 class Batch extends ResourceBase {
 
-  public readonly string $status;
+  public readonly BatchStatus $status;
 
   public readonly string $objectCreated;
 
@@ -20,7 +22,7 @@ class Batch extends ResourceBase {
 
   public readonly string $defaultServicelevelToken;
 
-  public readonly string $labelFiletype;
+  public readonly LabelFileType $labelFiletype;
 
   public readonly string $metadata;
 
@@ -32,7 +34,10 @@ class Batch extends ResourceBase {
 
   public function __construct(\stdClass $source) {
     $this->batchShipments = new BatchShipmentPager($source->batch_shipments);
+    $this->status = BatchStatus::from($source->status);
+    $this->labelFiletype = LabelFileType::from($source->label_filetype);
     parent::__construct($source);
   }
+
 
 }

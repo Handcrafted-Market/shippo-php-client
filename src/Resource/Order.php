@@ -2,6 +2,9 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Enum\MassUnit;
+use Handcrafted\Shippo\Enum\OrderStatus;
+use Handcrafted\Shippo\Enum\ShopApp;
 use Handcrafted\Shippo\Meta\LineItem;
 
 class Order extends ResourceBase {
@@ -12,7 +15,7 @@ class Order extends ResourceBase {
 
   public readonly string $orderNumber;
 
-  public readonly string $oderStatus;
+  public readonly OrderStatus $orderStatus;
 
   public readonly string $placedAt;
 
@@ -29,7 +32,7 @@ class Order extends ResourceBase {
 
   public readonly string $shippingCostCurrency;
 
-  public readonly string $shopApp;
+  public readonly ShopApp $shopApp;
 
   public readonly string $totalPrice;
 
@@ -44,13 +47,16 @@ class Order extends ResourceBase {
 
   public readonly string $weight;
 
-  public readonly string $weightUnit;
+  public readonly MassUnit $weightUnit;
 
   public readonly ?string $notes;
 
   public function __construct(\stdClass $source) {
     $this->lineItems = array_map(fn($li) => new LineItem($li), $source->line_items);
     $this->transactions = array_map(fn($t) => new Transaction($t), $source->transactions);
+    $this->orderStatus = OrderStatus::from($source->order_status);
+    $this->shopApp = ShopApp::from($source->shop_app);
+    $this->weightUnit = MassUnit::from($source->weight_unit);
     parent::__construct($source);
   }
 

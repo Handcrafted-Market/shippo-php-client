@@ -50,9 +50,9 @@ class Transaction extends ResourceBase {
 
   public readonly string $qrCodeUrl;
 
-  public function __construct($data) {
+  public function __construct($source) {
     $this->messages = array_map(fn($m) => new Message($m), $data->messages);
-    parent::__construct($data);
+    parent::__construct($source);
   }
 
 
