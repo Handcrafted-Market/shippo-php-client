@@ -3,6 +3,7 @@
 namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Meta\Message;
+use Handcrafted\Shippo\Meta\ServiceLevelChild;
 
 class Rate extends ResourceBase {
 
@@ -67,10 +68,9 @@ class Rate extends ResourceBase {
   public readonly string $providerImage200;
 
   /**
-   * @var \stdClass|mixed
-   * @todo: We need a complex ServiceLevel class to represent this.
+   * @var ServiceLevelChild
    */
-  public readonly \stdClass $serviceLevel;
+  public readonly ServiceLevelChild $serviceLevel;
 
   /**
    * @var integer
@@ -100,11 +100,11 @@ class Rate extends ResourceBase {
   /**
    * @var bool
    */
-  public readonly $test;
+  public readonly bool $test;
 
   public function __construct(\stdClass $source) {
     // Need to map the service levels to a new class.
-    //    $this->serviceLevel = array_map();
+    $this->serviceLevel = $source->servicelevel;
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
     parent::__construct($source);
   }
