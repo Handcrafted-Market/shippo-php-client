@@ -1,0 +1,1 @@
+These particular enums are outlined in the API reference under the "Enums" section.
