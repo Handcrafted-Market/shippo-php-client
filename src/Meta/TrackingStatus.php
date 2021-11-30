@@ -27,10 +27,10 @@ class TrackingStatus extends Mapper {
 
   public readonly string $statusDate;
 
-  public readonly AddressStub $location;
+  public readonly AddressSimple $location;
 
   public function __construct(\stdClass $source) {
-    $this->location = new AddressStub($source->location);
+    $this->location = new AddressSimple($source->location);
     parent::__construct($source);
   }
 

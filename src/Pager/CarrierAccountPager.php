@@ -7,6 +7,6 @@ class CarrierAccountPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\CarrierAccount[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

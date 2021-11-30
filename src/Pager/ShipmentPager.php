@@ -7,6 +7,6 @@ class ShipmentPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Shipment[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

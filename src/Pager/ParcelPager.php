@@ -7,6 +7,6 @@ class ParcelPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Parcel[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

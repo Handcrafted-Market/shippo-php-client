@@ -7,6 +7,6 @@ class CustomsDeclarationsPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\CustomsDeclaration[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

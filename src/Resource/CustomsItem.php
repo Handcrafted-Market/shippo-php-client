@@ -27,66 +27,66 @@ class CustomsItem extends ResourceBase {
   /**
    * @var string
    */
-  public readonly $objectState;
+  public readonly string $objectState;
 
   /**
    * @var string
    */
-  public readonly $description;
+  public readonly string $description;
 
   /**
    * @var int
    */
-  public readonly $quantity;
+  public readonly int $quantity;
 
   /**
    * @var string
    */
-  public readonly $netWeight;
+  public readonly string $netWeight;
 
   /**
    * @var string
    */
-  public readonly $massUnit;
+  public readonly string $massUnit;
 
   /**
    * @var string
    */
-  public readonly $valueAmount;
+  public readonly string $valueAmount;
 
   /**
    * @var string
    */
-  public readonly $valueCurrency;
+  public readonly string $valueCurrency;
 
   /**
    * @var string
    */
-  public readonly $tarifNumber;
+  public readonly string $tarifNumber;
 
   /**
    * @var string|null
    */
-  public readonly $skuCode;
+  public readonly ?string $skuCode;
 
   /**
    * @var string
    */
-  public readonly $originCountry;
+  public readonly string $originCountry;
 
   /**
    * @var string
    */
-  public readonly $eccnEar99;
+  public readonly string $eccnEar99;
 
   /**
    * @var string
    */
-  public readonly $metadata;
+  public readonly string $metadata;
 
   /**
    * @var bool
    */
-  public readonly $test;
+  public readonly bool $test;
 
 }

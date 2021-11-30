@@ -29,72 +29,66 @@ class Shipment extends ResourceBase {
   /**
    * @var string
    */
-  public readonly $status;
+  public readonly string $status;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
    */
-  public readonly $addressFrom;
+  public readonly Address $addressFrom;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
    */
-  public readonly $addressTo;
+  public readonly Address $addressTo;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address
    */
-  public readonly $addressReturn;
+  public readonly Address $addressReturn;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Parcel[]
    */
-  public readonly $parcels;
+  public readonly array $parcels;
 
   /**
    * @var string
    */
-  public readonly $shipmentDate;
+  public readonly string $shipmentDate;
 
   /**
    * @var \stdClass
    */
-  public readonly $extra;
+  public readonly \stdClass $extra;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Address|null
    */
-  public readonly $alternateAddressTo;
+  public readonly ?Address $alternateAddressTo;
 
-  /**
-   * @var mixed|null - The docs don't describe this.
-   */
-  public readonly $customsDeclaration;
+  public readonly string $customsDeclaration;
 
   /**
    * @var \Handcrafted\Shippo\Resource\Rate[]
    */
-  public readonly $rates;
+  public readonly array $rates;
 
   /**
    * @var array
    */
-  public readonly $carrierAccounts;
+  public readonly array $carrierAccounts;
 
   /**
    * @var \Handcrafted\Shippo\Meta\Message[]
    */
-  public readonly $messages;
+  public readonly array $messages;
 
-  /**
-   * @var string|mixed
-   */
-  public readonly $metadata;
+  public readonly string $metadata;
 
   /**
    * @var bool
    */
-  public readonly $test;
+  public readonly bool $test;
 
   public function __construct($data) {
     $this->addressFrom = new Address($data->address_from);
@@ -104,7 +98,7 @@ class Shipment extends ResourceBase {
       return new Parcel($p);
     }, $data->parcels);
 
-    if ($this->alternateAddressTo) {
+    if ($data->alternateAddressTo) {
       $this->alternateAddressTo = new Address($data->alternate_address_to);
     }
 

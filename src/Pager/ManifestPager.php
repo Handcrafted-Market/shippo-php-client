@@ -7,6 +7,6 @@ class ManifestPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Manifest[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

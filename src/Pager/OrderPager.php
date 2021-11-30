@@ -7,6 +7,6 @@ class OrderPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Order[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

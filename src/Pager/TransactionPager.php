@@ -7,6 +7,6 @@ class TransactionPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Resource\Transaction[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

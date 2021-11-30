@@ -7,6 +7,6 @@ class BatchShipmentPager extends PagerBase {
   /**
    * @var \Handcrafted\Shippo\Meta\BatchShipment[]
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

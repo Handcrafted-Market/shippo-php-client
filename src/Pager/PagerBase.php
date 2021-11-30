@@ -9,16 +9,16 @@ abstract class PagerBase extends ResourceBase {
   /**
    * @var string
    */
-  public readonly $next;
+  public readonly string $next;
 
   /**
    * @var string
    */
-  public readonly $previous;
+  public readonly string $previous;
 
   /**
    * @var array
    */
-  public readonly $results;
+  public readonly array $results;
 
 }

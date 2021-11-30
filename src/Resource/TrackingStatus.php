@@ -2,8 +2,8 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-use Handcrafted\Shippo\Meta\AddressStub;
-use Handcrafted\Shippo\Meta\ServiceLevel;
+use Handcrafted\Shippo\Meta\AddressSimple;
+use Handcrafted\Shippo\Meta\ServiceLevelSimple;
 
 class TrackingStatus extends ResourceBase {
 
@@ -11,9 +11,9 @@ class TrackingStatus extends ResourceBase {
 
   public readonly string $trackingNumber;
 
-  public readonly AddressStub $addressFrom;
+  public readonly AddressSimple $addressFrom;
 
-  public readonly AddressStub $addressTo;
+  public readonly AddressSimple $addressTo;
 
   public readonly string $transaction;
 
@@ -21,12 +21,9 @@ class TrackingStatus extends ResourceBase {
 
   public readonly string $originalEta;
 
-  public readonly ServiceLevel $serviceLevel;
-
-  /**
-   * @var mixed
-   */
-  public readonly $metadata;
+  public readonly ServiceLevelSimple $serviceLevel;
+  
+  public readonly string $metadata;
 
   public readonly \Handcrafted\Shippo\Meta\TrackingStatus $trackingStatus;
 
@@ -36,9 +33,9 @@ class TrackingStatus extends ResourceBase {
   public readonly array $trackingHistory;
 
   public function __construct(\stdClass $source) {
-    $this->addressFrom = new AddressStub($source->address_from);
-    $this->addressTo = new AddressStub($source->address_to);
-    $this->serviceLevel = new ServiceLevel($source->serviceLevel);
+    $this->addressFrom = new AddressSimple($source->address_from);
+    $this->addressTo = new AddressSimple($source->address_to);
+    $this->serviceLevel = new ServiceLevelSimple($source->serviceLevel);
     $this->trackingStatus = new \Handcrafted\Shippo\Meta\TrackingStatus($source->tracking_status);
     $this->trackingHistory = array_map(fn($ts) => new \Handcrafted\Shippo\Meta\TrackingStatus($ts), $source->tracking_history);
 
