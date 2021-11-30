@@ -72,8 +72,9 @@ class CustomsDeclaration extends ResourceBase {
 
   public function __construct(\stdClass $source) {
     $this->items = array_map(fn($i) => new CustomsItem($i), $source->items);
-    $this->invoicedCharges = array_map(fn($ic) => new InvoicedCharges($ic), $source->invoicedCharges);
-    $this->exporterIdentification = array_map(fn($ei) => new ExporterIdentification($ei), $source->exporterIdentification);
+    $this->invoicedCharges = array_map(fn($ic) => new InvoicedCharges($ic), $source->invoiced_charges);
+    $this->exporterIdentification = array_map(fn($ei) => new ExporterIdentification($ei),
+      $source->exporter_identification);
     parent::__construct($source);
   }
 

@@ -2,6 +2,8 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Meta\ManifestError;
+
 class Manifest extends ResourceBase {
 
   /**
@@ -57,11 +59,16 @@ class Manifest extends ResourceBase {
   /**
    * @var string[]
    */
-  public readonly array $transctions;
+  public readonly array $transactions;
 
   /**
-   * @var array[]
+   * @var string[]
    */
   public readonly array $documents;
+
+  public function __construct(\stdClass $source) {
+    $this->errors = array_map(fn($me) => new ManifestError($me), $source->errors);
+    parent::__construct($source);
+  }
 
 }

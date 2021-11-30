@@ -24,11 +24,15 @@ class Batch extends ResourceBase {
 
   public readonly string $metadata;
 
-
   public readonly BatchShipmentPager $batchShipments;
 
   public readonly string $labelUrl;
 
   public readonly string $objectResults;
+
+  public function __construct(\stdClass $source) {
+    $this->batchShipments = new BatchShipmentPager($source->batch_shipments);
+    parent::__construct($source);
+  }
 
 }

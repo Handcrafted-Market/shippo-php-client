@@ -21,36 +21,38 @@ class Transaction extends ResourceBase {
    */
   public readonly string $objectOwner;
 
-  public readonly $objectState;
+  public readonly string $objectState;
 
-  public readonly $status;
+  public readonly string $status;
 
-  public readonly $test;
+  public readonly bool $test;
 
-  public readonly $rate;
+  public readonly string $rate;
 
-  public readonly $trackingNumber;
+  public readonly string $trackingNumber;
 
-  public readonly $trackingStatus;
+  public readonly string $trackingStatus;
 
-  public readonly $trackingUrlProvided;
+  public readonly string $trackingUrlProvided;
 
-  public readonly $eta;
+  public readonly string $eta;
 
-  public readonly $labelUrl;
+  public readonly string $labelUrl;
 
-  public readonly $commercialInvoiceUrl;
+  public readonly string $commercialInvoiceUrl;
 
-  public readonly $metadata;
+  public readonly string $metadata;
 
-  public readonly $messages;
+  /**
+   * @var \Handcrafted\Shippo\Meta\Message[]
+   */
+  public readonly array $messages;
 
-  public readonly $qrCodeUrl;
+  public readonly string $qrCodeUrl;
 
   public function __construct($data) {
-    parent::__construct($data);
     $this->messages = array_map(fn($m) => new Message($m), $data->messages);
-
+    parent::__construct($data);
   }
 
 

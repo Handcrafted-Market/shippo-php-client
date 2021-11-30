@@ -27,16 +27,16 @@ class Refund extends ResourceBase {
   /**
    * @var string
    */
-  public readonly $status;
+  public readonly string $status;
 
   /**
    * @var string
    */
-  public readonly $transaction;
+  public readonly string $transaction;
 
   /**
    * @var bool
    */
-  public readonly $test;
+  public readonly bool $test;
 
 }

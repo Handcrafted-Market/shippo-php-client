@@ -2,6 +2,8 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Meta\Message;
+
 class Rate extends ResourceBase {
 
   /**
@@ -22,81 +24,89 @@ class Rate extends ResourceBase {
   /**
    * @var string
    */
-  public readonly $shipment;
+  public readonly string $shipment;
 
   /**
-   * @var array
+   * @var string[]
    */
-  public readonly $attributes;
-
-  /**
-   * @var string
-   */
-  public readonly $amountLocal;
+  public readonly array $attributes;
 
   /**
    * @var string
    */
-  public readonly $currencyLocal;
+  public readonly string $amountLocal;
 
   /**
    * @var string
    */
-  public readonly $amount;
+  public readonly string $currencyLocal;
 
   /**
    * @var string
    */
-  public readonly $currency;
+  public readonly string $amount;
 
   /**
    * @var string
    */
-  public readonly $provider;
+  public readonly string $currency;
 
   /**
    * @var string
    */
-  public readonly $providerImage75;
+  public readonly string $provider;
 
   /**
    * @var string
    */
-  public readonly $providerImage200;
+  public readonly string $providerImage75;
+
+  /**
+   * @var string
+   */
+  public readonly string $providerImage200;
 
   /**
    * @var \stdClass|mixed
+   * @todo: We need a complex ServiceLevel class to represent this.
    */
-  public readonly $serviceLevel;
+  public readonly \stdClass $serviceLevel;
 
   /**
    * @var integer
    */
-  public readonly $estimatedDays;
+  public readonly int $estimatedDays;
 
   /**
    * @var string
    */
-  public readonly $durationTerms;
+  public readonly string $durationTerms;
 
   /**
    * @var string
    */
-  public readonly $carrierAccount;
+  public readonly string $carrierAccount;
 
   /**
    * @var string
    */
-  public readonly $zone;
+  public readonly string $zone;
 
   /**
-   * @var array
+   * @var \Handcrafted\Shippo\Meta\Message[]
    */
-  public readonly $messages;
+  public readonly array $messages;
 
   /**
    * @var bool
    */
   public readonly $test;
+
+  public function __construct(\stdClass $source) {
+    // Need to map the service levels to a new class.
+    //    $this->serviceLevel = array_map();
+    $this->messages = array_map(fn($m) => new Message($m), $source->messages);
+    parent::__construct($source);
+  }
 
 }

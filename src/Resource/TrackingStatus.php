@@ -35,5 +35,14 @@ class TrackingStatus extends ResourceBase {
    */
   public readonly array $trackingHistory;
 
+  public function __construct(\stdClass $source) {
+    $this->addressFrom = new AddressStub($source->address_from);
+    $this->addressTo = new AddressStub($source->address_to);
+    $this->serviceLevel = new ServiceLevel($source->serviceLevel);
+    $this->trackingStatus = new \Handcrafted\Shippo\Meta\TrackingStatus($source->tracking_status);
+    $this->trackingHistory = array_map(fn($ts) => new \Handcrafted\Shippo\Meta\TrackingStatus($ts), $source->tracking_history);
+
+    parent::__construct($source);
+  }
 
 }

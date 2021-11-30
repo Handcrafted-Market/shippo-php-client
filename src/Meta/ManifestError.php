@@ -10,12 +10,4 @@ class ManifestError extends Mapper {
 
   public readonly string $message;
 
-  public function code() {
-    return $this->code;
-  }
-
-  public function message() {
-    return $this->message;
-  }
-
 }

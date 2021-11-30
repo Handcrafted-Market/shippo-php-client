@@ -14,4 +14,9 @@ class Location extends \Handcrafted\Shippo\Mapper {
 
   public readonly Address $address;
 
+  public function __construct(\stdClass $source) {
+    $this->address = new Address($source->address);
+    parent::__construct($source);
+  }
+
 }

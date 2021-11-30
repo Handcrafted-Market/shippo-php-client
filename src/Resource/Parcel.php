@@ -27,61 +27,56 @@ class Parcel extends ResourceBase {
   /**
    * @var string
    */
-  public readonly $objectState;
+  public readonly string $objectState;
 
   /**
-   * @var mixed|null
+   * @var string|null
    */
-  public readonly $template;
-
-  /**
-   * @var string
-   */
-  public readonly $length;
+  public readonly string $template;
 
   /**
    * @var string
    */
-  public readonly $width;
+  public readonly string $length;
 
   /**
    * @var string
    */
-  public readonly $height;
+  public readonly string $width;
 
   /**
    * @var string
    */
-  public readonly $distanceUnit;
+  public readonly string $height;
 
   /**
    * @var string
    */
-  public readonly $weight;
+  public readonly string $distanceUnit;
 
   /**
    * @var string
    */
-  public readonly $massUnit;
+  public readonly string $weight;
 
   /**
    * @var string
    */
-  public readonly $metadata;
+  public readonly string $massUnit;
 
   /**
-   * @var mixed
+   * @var string
    */
-  public readonly $extra;
+  public readonly string $metadata;
 
   /**
-   * @var array
+   * @var object - Should be converted to Extra when created.
    */
-  public readonly $lineItems;
+  public readonly object $extra;
 
   /**
    * @var bool
    */
-  public readonly $test;
+  public readonly bool $test;
 
 }

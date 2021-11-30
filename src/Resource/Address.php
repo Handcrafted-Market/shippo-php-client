@@ -2,81 +2,88 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\Meta\ValidationResult;
+
 class Address extends ResourceBase {
 
   /**
    * @var string|null
    */
-  public readonly $objectId;
+  public readonly string $objectId;
 
   /**
    * @var \Handcrafted\Shippo\Meta\ValidationResult|null
    */
-  public readonly $validationResults;
+  public readonly ?ValidationResult $validationResults;
 
   /**
    * @var string
    */
-  public readonly $name;
+  public readonly string $name;
 
   /**
    * @var string
    */
-  public readonly $company;
+  public readonly string $company;
 
   /**
    * @var string
    */
-  public readonly $streetNo;
+  public readonly string $streetNo;
 
   /**
    * @var string
    */
-  public readonly $street1;
+  public readonly string $street1;
 
   /**
    * @var string
    */
-  public readonly $street2;
+  public readonly string $street2;
 
   /**
    * @var string
    */
-  public readonly $street3;
+  public readonly string $street3;
 
   /**
    * @var string
    */
-  public readonly $city;
+  public readonly string $city;
 
   /**
    * @var string
    */
-  public readonly $state;
+  public readonly string $state;
 
   /**
    * @var string
    */
-  public readonly $zip;
+  public readonly string $zip;
 
   /**
    * @var string
    */
-  public readonly $country;
+  public readonly string $country;
 
   /**
    * @var string
    */
-  public readonly $phone;
+  public readonly string $phone;
 
   /**
    * @var string
    */
-  public readonly $email;
+  public readonly string $email;
 
   /**
    * @var string|null
    */
-  public readonly $isResidential;
+  public readonly ?string $isResidential;
+
+  public function __construct(\stdClass $source) {
+    $this->validationResults = new ValidationResult($source->validation_results);
+    parent::__construct($source);
+  }
 
 }

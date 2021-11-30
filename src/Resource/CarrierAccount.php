@@ -17,8 +17,8 @@ class CarrierAccount extends ResourceBase {
    */
   public readonly array $parameters;
 
-  protected bool $test;
+  public readonly bool $test;
 
-  protected bool $active;
+  public readonly bool $active;
 
 }

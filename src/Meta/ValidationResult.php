@@ -16,4 +16,9 @@ class ValidationResult extends ResourceBase {
    */
   public readonly $messages;
 
+  public function __construct(\stdClass $source) {
+    $this->messages = array_map(fn($m) => new Message($m), $source->messages);
+    parent::__construct($source);
+  }
+
 }

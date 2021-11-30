@@ -3,6 +3,7 @@
 namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Meta\Location;
+use Handcrafted\Shippo\Meta\Message;
 
 class Pickup extends ResourceBase {
 
@@ -45,5 +46,11 @@ class Pickup extends ResourceBase {
   public readonly string $metadata;
 
   public readonly bool $isTest;
+
+  public function __construct(\stdClass $source) {
+    $this->location = new Location($source->location);
+    $this->messages = array_map(fn($m) => new Message($m), $source->messages);
+    parent::__construct($source);
+  }
 
 }

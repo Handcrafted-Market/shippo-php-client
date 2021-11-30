@@ -29,5 +29,9 @@ class TrackingStatus extends Mapper {
 
   public readonly AddressStub $location;
 
+  public function __construct(\stdClass $source) {
+    $this->location = new AddressStub($source->location);
+    parent::__construct($source);
+  }
 
 }
