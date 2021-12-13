@@ -8,6 +8,6 @@ interface ParcelProviderInterface {
   /**
    * @return \Handcrafted\Shippo\Enum\Api\ParcelTemplate\ParcelTemplate[]
    */
-  public function allParcelTemplates(): array;
+  public static function listAllParcelTemplates(): array;
 
 }
