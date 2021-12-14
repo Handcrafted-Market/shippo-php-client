@@ -5,7 +5,7 @@ use Handcrafted\Shippo\Enum\DistanceUnit;
 final class DhlECommerce extends ImitationEnum implements ParcelProviderInterface {
 
   public static function listAllParcelTemplates(): array {
-    $methods = get_class_methods('Handcrafted\Shippo\Enum\Api\ParcelTemplate\DHL eCommerce');
+    $methods = get_class_methods('Handcrafted\Shippo\Enum\Api\ParcelTemplate\DhlECommerce');
     $results = [];
     foreach ($methods as $method) {
       if ($method === 'listAllParcelTemplates') {
