@@ -2,7 +2,7 @@
 
 use Handcrafted\Shippo\Enum\DistanceUnit;
 
-final class UPS extends ImitationEnum implements ParcelProviderInterface {
+final class Ups extends ImitationEnum implements ParcelProviderInterface {
 
   public static function listAllParcelTemplates(): array {
     $methods = get_class_methods('Handcrafted\Shippo\Enum\Api\ParcelTemplate\UPS');
