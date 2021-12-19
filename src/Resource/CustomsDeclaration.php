@@ -12,7 +12,7 @@ use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\ExporterIdentification;
 use Handcrafted\Shippo\Meta\InvoicedCharges;
 
-class CustomsDeclaration implements ResourceInterface {
+class CustomsDeclaration {
 
   use MapperTrait;
 

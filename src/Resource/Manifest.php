@@ -6,7 +6,7 @@ use Handcrafted\Shippo\Enum\ManifestStatus;
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\ManifestError;
 
-class Manifest implements ResourceInterface {
+class Manifest {
 
   use MapperTrait;
 

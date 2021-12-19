@@ -6,7 +6,7 @@ use Handcrafted\Shippo\Enum\DistanceUnit;
 use Handcrafted\Shippo\Enum\MassUnit;
 use Handcrafted\Shippo\MapperTrait;
 
-class Parcel implements ResourceInterface {
+class Parcel {
 
   use MapperTrait;
 

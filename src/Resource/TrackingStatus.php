@@ -6,7 +6,7 @@ use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\AddressSimple;
 use Handcrafted\Shippo\Meta\ServiceLevelSimple;
 
-class TrackingStatus implements ResourceInterface {
+class TrackingStatus {
 
   use MapperTrait;
 

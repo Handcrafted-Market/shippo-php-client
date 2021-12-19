@@ -6,7 +6,7 @@ use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
 use Handcrafted\Shippo\Meta\ServiceLevelChild;
 
-class Rate implements ResourceInterface {
+class Rate {
 
   use MapperTrait;
 

@@ -5,7 +5,7 @@ namespace Handcrafted\Shippo\Resource;
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\ValidationResult;
 
-class Address implements ResourceInterface {
+class Address {
 
   use MapperTrait;
 

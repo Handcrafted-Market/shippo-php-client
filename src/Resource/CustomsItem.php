@@ -4,7 +4,7 @@ namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\MapperTrait;
 
-class CustomsItem implements ResourceInterface {
+class CustomsItem {
 
   use MapperTrait;
 

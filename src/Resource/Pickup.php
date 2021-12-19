@@ -7,7 +7,7 @@ use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Location;
 use Handcrafted\Shippo\Meta\Message;
 
-class Pickup implements ResourceInterface {
+class Pickup {
 
   use MapperTrait;
 

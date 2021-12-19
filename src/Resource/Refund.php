@@ -4,7 +4,7 @@ namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\MapperTrait;
 
-class Refund implements ResourceInterface {
+class Refund {
 
   use MapperTrait;
 

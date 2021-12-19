@@ -6,7 +6,7 @@ use Handcrafted\Shippo\Enum\ShipmentStatus;
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
 
-class Shipment implements ResourceInterface {
+class Shipment {
 
   use MapperTrait;
 

@@ -7,7 +7,7 @@ use Handcrafted\Shippo\Enum\LabelFileType;
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Pager\BatchShipmentPager;
 
-class Batch implements ResourceInterface {
+class Batch {
 
   use MapperTrait;
 

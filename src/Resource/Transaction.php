@@ -5,7 +5,7 @@ namespace Handcrafted\Shippo\Resource;
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
 
-class Transaction implements ResourceInterface {
+class Transaction {
 
   use MapperTrait;
 

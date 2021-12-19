@@ -8,7 +8,7 @@ use Handcrafted\Shippo\Enum\ShopApp;
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\LineItem;
 
-class Order implements ResourceInterface {
+class Order {
 
   use MapperTrait;
 

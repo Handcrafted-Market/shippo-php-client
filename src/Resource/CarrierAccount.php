@@ -4,7 +4,7 @@ namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\MapperTrait;
 
-class CarrierAccount implements ResourceInterface {
+class CarrierAccount {
 
   use MapperTrait;
 
