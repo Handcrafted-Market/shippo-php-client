@@ -11,7 +11,7 @@ abstract class ClientBase {
    *
    * @var string
    */
-  public readonly string $baseUrl = 'https://api.goshippo.com';
+  public readonly string $baseUrl;
 
   /**
    * The key (or "token") to use for the requests.
@@ -45,6 +45,7 @@ abstract class ClientBase {
    *   The token to use for API requests.
    */
   public function __construct(string $api_token) {
+    $this->baseUrl = 'https://api.goshippo.com';
     $this->apiKey = $api_token;
     $this->guzzleClient = new Client([
       'base_uri' => $this->baseUrl,

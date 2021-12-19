@@ -47,9 +47,10 @@ class Client extends ClientBase {
 
   public readonly Transaction $transaction;
 
-  public readonly string $apiVersion = '2018-02-08';
+  public readonly string $apiVersion;
 
   public function __construct(string $api_token) {
+    $this->apiVersion = '2018-02-08';
     parent::__construct($api_token);
     $this->address = new Address($this);
     $this->batch = new Batch($this);
