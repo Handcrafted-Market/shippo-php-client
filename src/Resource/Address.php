@@ -82,7 +82,11 @@ class Address extends ResourceBase {
   public readonly ?string $isResidential;
 
   public function __construct(\stdClass $source) {
-    $this->validationResults = new ValidationResult($source->validation_results);
+    // Cast to an array to check if empty, because there
+    // isn't really a concept of an empty object.
+    $this->validationResults = !empty((array) $source->validation_results)
+      ? new ValidationResult($source->validation_results)
+      : NULL;
     parent::__construct($source);
   }
 
