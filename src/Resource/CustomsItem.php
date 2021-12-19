@@ -2,7 +2,11 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class CustomsItem extends ResourceBase {
+use Handcrafted\Shippo\MapperTrait;
+
+class CustomsItem implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -88,5 +92,9 @@ class CustomsItem extends ResourceBase {
    * @var bool
    */
   public readonly bool $test;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }

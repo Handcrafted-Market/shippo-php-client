@@ -4,8 +4,11 @@ namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Enum\DistanceUnit;
 use Handcrafted\Shippo\Enum\MassUnit;
+use Handcrafted\Shippo\MapperTrait;
 
-class Parcel extends ResourceBase {
+class Parcel implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -85,7 +88,7 @@ class Parcel extends ResourceBase {
   public function __construct(\stdClass $source) {
     $this->distanceUnit = DistanceUnit::from($source->distance_unit);
     $this->massUnit = MassUnit::from($source->mass_unit);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

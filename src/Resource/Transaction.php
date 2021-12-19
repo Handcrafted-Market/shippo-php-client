@@ -2,9 +2,12 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
 
-class Transaction extends ResourceBase {
+class Transaction implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -51,8 +54,8 @@ class Transaction extends ResourceBase {
   public readonly string $qrCodeUrl;
 
   public function __construct($source) {
-    $this->messages = array_map(fn($m) => new Message($m), $data->messages);
-    parent::__construct($source);
+    $this->messages = array_map(fn($m) => new Message($m), $source->messages);
+    $this->map($source);
   }
 
 

@@ -4,9 +4,12 @@ namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Enum\BatchStatus;
 use Handcrafted\Shippo\Enum\LabelFileType;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Pager\BatchShipmentPager;
 
-class Batch extends ResourceBase {
+class Batch implements ResourceInterface {
+
+  use MapperTrait;
 
   public readonly BatchStatus $status;
 
@@ -36,7 +39,7 @@ class Batch extends ResourceBase {
     $this->batchShipments = new BatchShipmentPager($source->batch_shipments);
     $this->status = BatchStatus::from($source->status);
     $this->labelFiletype = LabelFileType::from($source->label_filetype);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 

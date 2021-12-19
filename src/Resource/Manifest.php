@@ -3,9 +3,12 @@
 namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Enum\ManifestStatus;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\ManifestError;
 
-class Manifest extends ResourceBase {
+class Manifest implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -26,7 +29,7 @@ class Manifest extends ResourceBase {
    * @var string
    */
   public readonly string $objectUpdated;
-  
+
   public readonly ManifestStatus $status;
 
   /**
@@ -67,7 +70,7 @@ class Manifest extends ResourceBase {
   public function __construct(\stdClass $source) {
     $this->errors = array_map(fn($me) => new ManifestError($me), $source->errors);
     $this->status = ManifestStatus::from($source->status);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

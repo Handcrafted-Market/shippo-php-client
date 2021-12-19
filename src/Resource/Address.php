@@ -2,9 +2,12 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\ValidationResult;
 
-class Address extends ResourceBase {
+class Address implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string|null
@@ -87,7 +90,7 @@ class Address extends ResourceBase {
     $this->validationResults = !empty((array) $source->validation_results)
       ? new ValidationResult($source->validation_results)
       : NULL;
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

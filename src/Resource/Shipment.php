@@ -3,9 +3,12 @@
 namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Enum\ShipmentStatus;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
 
-class Shipment extends ResourceBase {
+class Shipment implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -112,7 +115,7 @@ class Shipment extends ResourceBase {
     }, $source->messages);
 
     $this->status = ShipmentStatus::from($source->status);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

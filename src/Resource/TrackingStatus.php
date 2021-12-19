@@ -2,10 +2,13 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\AddressSimple;
 use Handcrafted\Shippo\Meta\ServiceLevelSimple;
 
-class TrackingStatus extends ResourceBase {
+class TrackingStatus implements ResourceInterface {
+
+  use MapperTrait;
 
   public readonly string $carrier;
 
@@ -22,7 +25,7 @@ class TrackingStatus extends ResourceBase {
   public readonly string $originalEta;
 
   public readonly ServiceLevelSimple $serviceLevel;
-  
+
   public readonly string $metadata;
 
   public readonly \Handcrafted\Shippo\Meta\TrackingStatus $trackingStatus;
@@ -39,7 +42,7 @@ class TrackingStatus extends ResourceBase {
     $this->trackingStatus = new \Handcrafted\Shippo\Meta\TrackingStatus($source->tracking_status);
     $this->trackingHistory = array_map(fn($ts) => new \Handcrafted\Shippo\Meta\TrackingStatus($ts), $source->tracking_history);
 
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

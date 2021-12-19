@@ -2,7 +2,7 @@
 
 namespace Handcrafted\Shippo;
 
-abstract class Mapper {
+trait MapperTrait {
 
   /**
    * Maps the stdClass properties to the instance properties.
@@ -12,20 +12,22 @@ abstract class Mapper {
    * @param \stdClass $source
    *   The stdClass from the request response.
    */
-  public function __construct(\stdClass $source) {
+  private function map(\stdClass $source) {
     $sourceReflection = new \ReflectionObject($source);
     $sourceProperties = $sourceReflection->getProperties();
     foreach ($sourceProperties as $sourceProperty) {
       $name = $sourceProperty->getName();
-      $nameCamel = self::toCamelCase($name);
+      $nameCamel = $this->toCamelCase($name);
 
       // Since everything is built on readonly props,
       // we need to make sure that we don't attempt
       // to write to pre-set properties.
-      if (isset($this->{$nameCamel})) {
+      try {
+        $this->{$nameCamel} = $source->$name;
+      }
+      catch (\Error $e) {
         continue;
       }
-      $this->{$nameCamel} = $source->$name;
     }
   }
 
@@ -43,7 +45,7 @@ abstract class Mapper {
    * @see http://www.mendoweb.be/blog/php-convert-string-to-camelcase-string/
    *
    */
-  private static function toCamelCase($str, array $noStrip = []) {
+  private function toCamelCase($str, array $noStrip = []) {
     // non-alpha and non-numeric characters become spaces
     $str = preg_replace('/[^a-z0-9' . implode("", $noStrip) . ']+/i', ' ', $str);
     $str = trim($str);

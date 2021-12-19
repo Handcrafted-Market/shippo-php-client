@@ -3,10 +3,13 @@
 namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Enum\PickupStatus;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Location;
 use Handcrafted\Shippo\Meta\Message;
 
-class Pickup extends ResourceBase {
+class Pickup implements ResourceInterface {
+
+  use MapperTrait;
 
   public readonly string $objectCreated;
 
@@ -52,7 +55,7 @@ class Pickup extends ResourceBase {
     $this->location = new Location($source->location);
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
     $this->status = PickupStatus::from($source->status);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

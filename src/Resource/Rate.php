@@ -2,10 +2,13 @@
 
 namespace Handcrafted\Shippo\Resource;
 
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
 use Handcrafted\Shippo\Meta\ServiceLevelChild;
 
-class Rate extends ResourceBase {
+class Rate implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -106,7 +109,7 @@ class Rate extends ResourceBase {
     // Need to map the service levels to a new class.
     $this->serviceLevel = $source->servicelevel;
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

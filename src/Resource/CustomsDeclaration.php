@@ -8,10 +8,13 @@ use Handcrafted\Shippo\Enum\EelPfc;
 use Handcrafted\Shippo\Enum\Incoterm;
 use Handcrafted\Shippo\Enum\NonDeliveryOption;
 use Handcrafted\Shippo\Enum\Validity;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\ExporterIdentification;
 use Handcrafted\Shippo\Meta\InvoicedCharges;
 
-class CustomsDeclaration extends ResourceBase {
+class CustomsDeclaration implements ResourceInterface {
+
+  use MapperTrait;
 
   public readonly Validity $objectState;
 
@@ -88,7 +91,7 @@ class CustomsDeclaration extends ResourceBase {
     $this->eelPfc = EelPfc::from($source->eel_pfc);
     $this->incoterm = Incoterm::from($source->incoterm);
     $this->b13aFilingOption = B13aFilingOption::from($source->b13a_filing_option);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

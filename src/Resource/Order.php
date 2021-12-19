@@ -5,9 +5,12 @@ namespace Handcrafted\Shippo\Resource;
 use Handcrafted\Shippo\Enum\MassUnit;
 use Handcrafted\Shippo\Enum\OrderStatus;
 use Handcrafted\Shippo\Enum\ShopApp;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\LineItem;
 
-class Order extends ResourceBase {
+class Order implements ResourceInterface {
+
+  use MapperTrait;
 
   public readonly string $objectId;
 
@@ -57,7 +60,7 @@ class Order extends ResourceBase {
     $this->orderStatus = OrderStatus::from($source->order_status);
     $this->shopApp = ShopApp::from($source->shop_app);
     $this->weightUnit = MassUnit::from($source->weight_unit);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

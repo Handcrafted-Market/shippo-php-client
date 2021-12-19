@@ -2,7 +2,11 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class Refund extends ResourceBase {
+use Handcrafted\Shippo\MapperTrait;
+
+class Refund implements ResourceInterface {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -38,5 +42,9 @@ class Refund extends ResourceBase {
    * @var bool
    */
   public readonly bool $test;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }

@@ -2,7 +2,11 @@
 
 namespace Handcrafted\Shippo\Resource;
 
-class CarrierAccount extends ResourceBase {
+use Handcrafted\Shippo\MapperTrait;
+
+class CarrierAccount implements ResourceInterface {
+
+  use MapperTrait;
 
   public readonly string $objectId;
 
@@ -20,5 +24,9 @@ class CarrierAccount extends ResourceBase {
   public readonly bool $test;
 
   public readonly bool $active;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }
