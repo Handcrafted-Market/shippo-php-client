@@ -92,26 +92,26 @@ class Shipment extends ResourceBase {
   public readonly bool $test;
 
   public function __construct($source) {
-    $this->addressFrom = new Address($data->address_from);
-    $this->addressTo = new Address($data->address_to);
-    $this->addressReturn = new Address($data->address_return);
+    $this->addressFrom = new Address($source->address_from);
+    $this->addressTo = new Address($source->address_to);
+    $this->addressReturn = new Address($source->address_return);
     $this->parcels = array_map(function ($p) {
       return new Parcel($p);
-    }, $data->parcels);
+    }, $source->parcels);
 
-    if ($data->alternateAddressTo) {
-      $this->alternateAddressTo = new Address($data->alternate_address_to);
+    if ($source->alternateAddressTo) {
+      $this->alternateAddressTo = new Address($source->alternate_address_to);
     }
 
     $this->rates = array_map(function ($r) {
       return new Rate($r);
-    }, $data->rates);
+    }, $source->rates);
 
     $this->messages = array_map(function ($m) {
       return new Message($m);
-    }, $data->messages);
+    }, $source->messages);
 
-    $this->status = ShipmentStatus::from($data->status);
+    $this->status = ShipmentStatus::from($source->status);
     parent::__construct($source);
   }
 
