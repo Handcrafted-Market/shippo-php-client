@@ -2,9 +2,12 @@
 
 namespace Handcrafted\Shippo\Meta;
 
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Resource\ResourceBase;
 
-class Message extends ResourceBase {
+class Message {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -25,5 +28,9 @@ class Message extends ResourceBase {
    * @var string
    */
   public readonly string $text;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }

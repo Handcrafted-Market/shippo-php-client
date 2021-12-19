@@ -2,9 +2,11 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Resource\ResourceBase;
+use Handcrafted\Shippo\MapperTrait;
 
-class ValidationResult extends ResourceBase {
+class ValidationResult {
+
+  use MapperTrait;
 
   /**
    * @var bool
@@ -18,7 +20,7 @@ class ValidationResult extends ResourceBase {
 
   public function __construct(\stdClass $source) {
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

@@ -91,6 +91,7 @@ class Address {
       ? new ValidationResult($source->validation_results)
       : NULL;
     $this->map($source);
+    $a = NULL;
   }
 
 }

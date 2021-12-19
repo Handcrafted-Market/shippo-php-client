@@ -4,7 +4,7 @@ namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Meta\Message;
-use Handcrafted\Shippo\Meta\ServiceLevelChild;
+use Handcrafted\Shippo\Meta\ServiceLevel;
 
 class Rate {
 
@@ -71,9 +71,9 @@ class Rate {
   public readonly string $providerImage200;
 
   /**
-   * @var ServiceLevelChild
+   * @var ServiceLevel
    */
-  public readonly ServiceLevelChild $serviceLevel;
+  public readonly ServiceLevel $serviceLevel;
 
   /**
    * @var integer
@@ -107,7 +107,7 @@ class Rate {
 
   public function __construct(\stdClass $source) {
     // Need to map the service levels to a new class.
-    $this->serviceLevel = $source->servicelevel;
+    $this->serviceLevel = new ServiceLevel($source->servicelevel);
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
     $this->map($source);
   }

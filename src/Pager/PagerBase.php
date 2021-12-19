@@ -2,9 +2,12 @@
 
 namespace Handcrafted\Shippo\Pager;
 
-use Handcrafted\Shippo\Resource\ResourceBase;
 
-abstract class PagerBase extends ResourceBase {
+use Handcrafted\Shippo\MapperTrait;
+
+abstract class PagerBase {
+
+  use MapperTrait;
 
   /**
    * @var string
@@ -20,5 +23,9 @@ abstract class PagerBase extends ResourceBase {
    * @var array
    */
   public readonly array $results;
+ 
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }

@@ -2,9 +2,12 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Resource\ResourceBase;
 
-class LineItem extends ResourceBase {
+use Handcrafted\Shippo\MapperTrait;
+
+class LineItem {
+
+  use MapperTrait;
 
   public readonly string $objectId;
 
@@ -29,5 +32,9 @@ class LineItem extends ResourceBase {
   public readonly string $maxShipTime;
 
   public readonly string $maxDeliveryTime;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }
