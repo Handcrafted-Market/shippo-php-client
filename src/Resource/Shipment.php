@@ -102,7 +102,7 @@ class Shipment {
       return new Parcel($p);
     }, $source->parcels);
 
-    if ($source->alternateAddressTo) {
+    if ($source->alternate_address_to) {
       $this->alternateAddressTo = new Address($source->alternate_address_to);
     }
 
