@@ -80,9 +80,14 @@ class Address {
   public readonly string $email;
 
   /**
-   * @var string|null
+   * @var bool|null
    */
-  public readonly ?string $isResidential;
+  public readonly ?bool $isResidential;
+
+  /**
+   * @var bool
+   */
+  public readonly bool $isComplete;
 
   public function __construct(\stdClass $source) {
     // Cast to an array to check if empty, because there
@@ -91,7 +96,6 @@ class Address {
       ? new ValidationResult($source->validation_results)
       : NULL;
     $this->map($source);
-    $a = NULL;
   }
 
 }
