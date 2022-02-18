@@ -36,7 +36,7 @@ class Transaction {
 
   public readonly string $trackingStatus;
 
-  public readonly string $trackingUrlProvided;
+  public readonly string $trackingUrlProvider;
 
   public readonly string $eta;
 
