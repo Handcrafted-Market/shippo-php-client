@@ -1,6 +1,6 @@
 <?php
 
-namespace Resource;
+namespace Handcrafted\Shippo\Resource;
 
 use Handcrafted\Shippo\Enum\Api\Carrier;
 use Handcrafted\Shippo\MapperTrait;
