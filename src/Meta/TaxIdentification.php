@@ -3,9 +3,11 @@
 namespace Handcrafted\Shippo\Meta;
 
 use Handcrafted\Shippo\Enum\TaxIdType;
-use Handcrafted\Shippo\Mapper;
+use Handcrafted\Shippo\MapperTrait;
 
-class TaxIdentification extends Mapper {
+class TaxIdentification {
+
+  use MapperTrait;
 
   public readonly ?string $number;
 
@@ -13,7 +15,7 @@ class TaxIdentification extends Mapper {
 
   public function __construct(\stdClass $source) {
     $this->type = TaxIdType::from($source->type);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

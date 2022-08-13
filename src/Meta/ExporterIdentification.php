@@ -2,9 +2,11 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Mapper;
+use Handcrafted\Shippo\MapperTrait;
 
-class ExporterIdentification extends Mapper {
+class ExporterIdentification {
+
+  use MapperTrait;
 
   public readonly ?string $eoriNumber;
 
@@ -12,7 +14,7 @@ class ExporterIdentification extends Mapper {
 
   public function __construct(\stdClass $source) {
     $this->taxId = $source->taxId;
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

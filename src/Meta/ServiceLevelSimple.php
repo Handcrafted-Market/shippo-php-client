@@ -2,7 +2,6 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Mapper;
 use Handcrafted\Shippo\MapperTrait;
 
 class ServiceLevelSimple {

@@ -18,4 +18,7 @@ enum Carrier: string {
 
   case USPS = "USPS";
 
+  // Used in test webhooks
+  case SHIPPO = 'shippo';
+
 }

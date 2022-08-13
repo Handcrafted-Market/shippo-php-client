@@ -2,9 +2,11 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Mapper;
+use Handcrafted\Shippo\MapperTrait;
 
-class InvoicedCharges extends Mapper {
+class InvoicedCharges {
+
+  use MapperTrait;
 
   public readonly string $currency;
 
@@ -15,5 +17,9 @@ class InvoicedCharges extends Mapper {
   public readonly ?string $totalDuties;
 
   public readonly ?string $otherFees;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }

@@ -4,9 +4,12 @@ namespace Handcrafted\Shippo\Meta;
 
 use Handcrafted\Shippo\Enum\BuildingLocationType;
 use Handcrafted\Shippo\Enum\BuildingType;
+use Handcrafted\Shippo\MapperTrait;
 use Handcrafted\Shippo\Resource\Address;
 
-class Location extends \Handcrafted\Shippo\Mapper {
+class Location {
+
+  use MapperTrait;
 
   public readonly BuildingLocationType $buildingLocationType;
 
@@ -20,7 +23,7 @@ class Location extends \Handcrafted\Shippo\Mapper {
     $this->address = new Address($source->address);
     $this->buildingLocationType = BuildingLocationType::from($source->building_location_type);
     $this->buildingType = BuildingType::from($source->building_type);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

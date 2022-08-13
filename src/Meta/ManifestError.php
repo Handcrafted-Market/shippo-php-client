@@ -2,12 +2,18 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Mapper;
+use Handcrafted\Shippo\MapperTrait;
 
-class ManifestError extends Mapper {
+class ManifestError {
+
+  use MapperTrait;
 
   public readonly string $code;
 
   public readonly string $message;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }

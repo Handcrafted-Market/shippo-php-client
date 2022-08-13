@@ -2,7 +2,11 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-class BatchShipment extends \Handcrafted\Shippo\Mapper {
+use Handcrafted\Shippo\MapperTrait;
+
+class BatchShipment {
+
+  use MapperTrait;
 
   public readonly string $metadata;
 
@@ -21,7 +25,7 @@ class BatchShipment extends \Handcrafted\Shippo\Mapper {
 
   public function __construct(\stdClass $source) {
     $this->messages = array_map(fn($m) => new Message($m), $source->messages);
-    parent::__construct($source);
+    $this->map($source);
   }
 
 }

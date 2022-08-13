@@ -2,9 +2,11 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Mapper;
+use Handcrafted\Shippo\MapperTrait;
 
-class AddressSimple extends Mapper {
+class AddressSimple {
+
+  use MapperTrait;
 
   public readonly string $city;
 
@@ -13,5 +15,9 @@ class AddressSimple extends Mapper {
   public readonly string $zip;
 
   public readonly string $country;
+
+  public function __construct(\stdClass $source) {
+    $this->map($source);
+  }
 
 }
