@@ -2,21 +2,21 @@
 
 namespace Handcrafted\Shippo\Service;
 
-use Handcrafted\Shippo\Pager\ParcelPager;
+use Handcrafted\Shippo\Enum\Api\Carrier;
 
 class TrackingStatus extends ServiceBase {
 
   /**
    * Gets a tracking status.
    *
-   * @param string $carrier - The name of the carrier who's serving the tracking number.
+   * @param Carrier $carrier - The carrier serving the tracking number.
    * @param string $tracking_number - The tracking number.
    *
    * @see https://goshippo.com/docs/reference/php#tracks-retrieve
    */
-  public function get(string $carrier, string $tracking_number):
+  public function get(Carrier $carrier, string $tracking_number):
   \Handcrafted\Shippo\Resource\TrackingStatus {
-    $data = $this->request('get', "/tracks/$carrier/$tracking_number");
+    $data = $this->request('get', "/tracks/$carrier->value/$tracking_number");
     return new \Handcrafted\Shippo\Resource\TrackingStatus($data);
   }
 
