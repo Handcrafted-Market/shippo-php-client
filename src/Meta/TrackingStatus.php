@@ -32,7 +32,7 @@ class TrackingStatus {
   public function __construct(\stdClass $source) {
     $this->location = new AddressSimple($source->location);
     $this->status = \Handcrafted\Shippo\Enum\TrackingStatus::from($source->status);
-    $this->subStatus = property_exists($source, 'substatus')
+    $this->subStatus = !empty($source->substatus)
       ? TrackingSubStatus::from($source->substatus)
       : NULL;
     $this->map($source);
