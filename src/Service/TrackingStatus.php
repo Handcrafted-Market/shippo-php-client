@@ -25,9 +25,17 @@ class TrackingStatus extends ServiceBase {
    *
    * @see https://goshippo.com/docs/reference/php#tracks-create
    */
-  public function registerWebhook():
-  \Handcrafted\Shippo\Resource\TrackingStatus {
-    $data = $this->request('post', "/tracks");
+  public function registerWebhook(Carrier $carrier, string $tracking_number, ?string $metadata = NULL): \Handcrafted\Shippo\Resource\TrackingStatus {
+    $params = [
+      'carrier' => $carrier->value,
+      'tracking_number' => $tracking_number,
+    ];
+
+    if ($metadata) {
+      $params['metadata'] = $metadata;
+    }
+
+    $data = $this->request('post', "/tracks", $params);
     return new \Handcrafted\Shippo\Resource\TrackingStatus($data);
   }
 
