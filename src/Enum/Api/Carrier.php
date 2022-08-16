@@ -16,7 +16,7 @@ enum Carrier: string {
 
   case UPS = "ups";
 
-  case USPS = "USPS";
+  case USPS = "usps";
 
   // Used in test webhooks
   case SHIPPO = 'shippo';
