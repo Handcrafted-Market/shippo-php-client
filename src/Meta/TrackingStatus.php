@@ -4,7 +4,6 @@ namespace Handcrafted\Shippo\Meta;
 
 use Handcrafted\Shippo\Enum\TrackingSubStatusCode;
 use Handcrafted\Shippo\MapperTrait;
-use Meta\TrackingSubStatus;
 
 /**
  * The "tracking status" resource has "tracking_status"

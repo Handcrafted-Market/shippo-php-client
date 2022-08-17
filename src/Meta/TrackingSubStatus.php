@@ -1,6 +1,6 @@
 <?php
 
-namespace Meta;
+namespace Handcrafted\Shippo\Meta;
 
 use Handcrafted\Shippo\Enum\TrackingSubStatusCode;
 use Handcrafted\Shippo\MapperTrait;
