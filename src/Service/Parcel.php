@@ -11,6 +11,7 @@ class Parcel extends ServiceBase {
    *
    * @param array $params - The request parameters.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#parcels-create
    */
   public function create(array $params): \Handcrafted\Shippo\Resource\Parcel {
@@ -23,6 +24,7 @@ class Parcel extends ServiceBase {
    *
    * @param string $id - The parcel ID.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#parcels-retrieve
    */
   public function get(string $id):
@@ -35,6 +37,7 @@ class Parcel extends ServiceBase {
    * Lists all parcels.
    *
    * @see https://goshippo.com/docs/reference/php#parcels-list
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function listAll():
   \Handcrafted\Shippo\Pager\ParcelPager {

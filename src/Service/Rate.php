@@ -9,6 +9,7 @@ class Rate extends ServiceBase {
    *
    * @param string $id - The rate ID.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#rates-retrieve
    */
   public function get(string $id):
@@ -23,6 +24,7 @@ class Rate extends ServiceBase {
    * @param string $shipment_id - The shipment ID.
    * @param string $currency_code - The currency code.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#rates-get
    */
   public function getRatesForShipment(string $shipment_id, string $currency_code): \Handcrafted\Shippo\Pager\PagerBase {

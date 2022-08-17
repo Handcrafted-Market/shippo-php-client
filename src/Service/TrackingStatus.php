@@ -12,6 +12,7 @@ class TrackingStatus extends ServiceBase {
    * @param Carrier $carrier - The carrier serving the tracking number.
    * @param string $tracking_number - The tracking number.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#tracks-retrieve
    */
   public function get(Carrier $carrier, string $tracking_number):
@@ -24,6 +25,7 @@ class TrackingStatus extends ServiceBase {
    * Register webhooks for a shipment.
    *
    * @see https://goshippo.com/docs/reference/php#tracks-create
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function registerWebhook(Carrier $carrier, string $tracking_number, ?string $metadata = NULL): \Handcrafted\Shippo\Resource\TrackingStatus {
     $params = [

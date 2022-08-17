@@ -9,6 +9,7 @@ class Shipment extends ServiceBase {
    *
    * @param array $params - The request parameters.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#addresses-create
    */
   public function create(array $params): \Handcrafted\Shippo\Resource\Shipment {
@@ -21,6 +22,7 @@ class Shipment extends ServiceBase {
    *
    * @param string $id - The shipment ID.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#shipments-retrieve
    */
   public function get(string $id):
@@ -38,6 +40,7 @@ class Shipment extends ServiceBase {
    *   - object_created_lt - object(s) created less than a provided date time
    *   - object_created_lte - object(s) created less than or equal to a provided date time
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#shipments-list
    */
   public function listAll(?array $path_params):
@@ -56,6 +59,7 @@ class Shipment extends ServiceBase {
    * @param string $shipment_id - The shipment ID.
    * @param string $currency_code - The currency code..
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#rates-get
    */
   public function getRates(string $shipment_id, string $currency_code): \Handcrafted\Shippo\Pager\PagerBase {

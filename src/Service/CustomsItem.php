@@ -9,6 +9,7 @@ class CustomsItem extends ServiceBase {
    *
    * @param array $params - The request parameters.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#customs-items-create
    */
   public function create(array $params): \Handcrafted\Shippo\Resource\CustomsItem {
@@ -21,6 +22,7 @@ class CustomsItem extends ServiceBase {
    *
    * @param string $id - The CustomsItem ID.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#customs-items-retrieve
    */
   public function get(string $id):
@@ -30,9 +32,10 @@ class CustomsItem extends ServiceBase {
   }
 
   /**
-   * Lists all customs items..
+   * Lists all customs items.
    *
    * @see https://goshippo.com/docs/reference/php#customs-items-list
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function listAll():
   \Handcrafted\Shippo\Pager\CustomsItemPager {

@@ -9,8 +9,9 @@ class Transaction extends ServiceBase {
    *
    * @param array $params - The request parameters.
    *
-   * @see https://goshippo.com/docs/reference/php#transactions-create
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#transactions-create-instant
+   * @see https://goshippo.com/docs/reference/php#transactions-create
    */
   public function create(array $params): \Handcrafted\Shippo\Resource\Transaction {
     $data = $this->request('post', '/transactions', $params);
@@ -22,6 +23,7 @@ class Transaction extends ServiceBase {
    *
    * @param string $id - The transaction ID.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#transactions-retrieve
    */
   public function get(string $id):
@@ -34,6 +36,7 @@ class Transaction extends ServiceBase {
    * Lists all parcels.
    *
    * @see https://goshippo.com/docs/reference/php#parcels-list
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function listAll():
   \Handcrafted\Shippo\Pager\TransactionPager {

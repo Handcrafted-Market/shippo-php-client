@@ -9,6 +9,7 @@ class Pickup extends ServiceBase {
    *
    * @param array $params - The request parameters.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#pickups-create
    */
   public function create(array $params): \Handcrafted\Shippo\Resource\Pickup {

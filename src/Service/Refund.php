@@ -2,7 +2,6 @@
 
 namespace Handcrafted\Shippo\Service;
 
-use Handcrafted\Shippo\Pager\ParcelPager;
 use Handcrafted\Shippo\Pager\RefundPager;
 
 class Refund extends ServiceBase {
@@ -12,6 +11,7 @@ class Refund extends ServiceBase {
    *
    * @param array $params - The request parameters.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#refunds-create
    */
   public function create(array $params): \Handcrafted\Shippo\Resource\Refund {
@@ -24,6 +24,7 @@ class Refund extends ServiceBase {
    *
    * @param string $id - The parcel ID.
    *
+   * @throws \GuzzleHttp\Exception\GuzzleException
    * @see https://goshippo.com/docs/reference/php#refunds-retrieve
    */
   public function get(string $id):
@@ -36,6 +37,7 @@ class Refund extends ServiceBase {
    * Lists all refunds.
    *
    * @see https://goshippo.com/docs/reference/php#refunds-list
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function listAll():
   \Handcrafted\Shippo\Pager\RefundPager {
