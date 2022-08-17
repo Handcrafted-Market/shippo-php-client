@@ -2,7 +2,6 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Enum\TrackingSubStatusCode;
 use Handcrafted\Shippo\MapperTrait;
 
 /**
@@ -25,7 +24,7 @@ class TrackingStatus {
 
   public readonly string $statusDate;
 
-  public readonly ?TrackingSubStatusCode $subStatus;
+  public readonly ?TrackingSubStatus $subStatus;
 
   public readonly ?AddressSimple $location;
 
