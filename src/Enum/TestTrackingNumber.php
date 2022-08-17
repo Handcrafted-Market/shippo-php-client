@@ -1,6 +1,6 @@
 <?php
 
-namespace Enum;
+namespace Handcrafted\Shippo\Enum;
 
 enum TestTrackingNumber {
 
