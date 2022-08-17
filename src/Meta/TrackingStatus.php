@@ -27,10 +27,12 @@ class TrackingStatus {
 
   public readonly ?TrackingSubStatus $subStatus;
 
-  public readonly AddressSimple $location;
+  public readonly ?AddressSimple $location;
 
   public function __construct(\stdClass $source) {
-    $this->location = new AddressSimple($source->location);
+    $this->location = !empty($this->location)
+      ? new AddressSimple($source->location)
+      : NULL;
     $this->status = \Handcrafted\Shippo\Enum\TrackingStatus::from($source->status);
     $this->subStatus = !empty($source->substatus)
       ? TrackingSubStatus::from($source->substatus)
