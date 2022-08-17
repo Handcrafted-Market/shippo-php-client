@@ -2,7 +2,7 @@
 
 namespace Handcrafted\Shippo\Enum;
 
-enum TrackingSubStatus: string {
+enum TrackingSubStatusCode: string {
 
   case INFORMATION_RECEIVED = 'information_received';
 

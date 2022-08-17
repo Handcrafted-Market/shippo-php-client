@@ -2,8 +2,9 @@
 
 namespace Handcrafted\Shippo\Meta;
 
-use Handcrafted\Shippo\Enum\TrackingSubStatus;
+use Handcrafted\Shippo\Enum\TrackingSubStatusCode;
 use Handcrafted\Shippo\MapperTrait;
+use Meta\TrackingSubStatus;
 
 /**
  * The "tracking status" resource has "tracking_status"
@@ -25,7 +26,7 @@ class TrackingStatus {
 
   public readonly string $statusDate;
 
-  public readonly ?TrackingSubStatus $subStatus;
+  public readonly ?TrackingSubStatusCode $subStatus;
 
   public readonly ?AddressSimple $location;
 
@@ -35,7 +36,7 @@ class TrackingStatus {
       : NULL;
     $this->status = \Handcrafted\Shippo\Enum\TrackingStatus::from($source->status);
     $this->subStatus = !empty($source->substatus)
-      ? TrackingSubStatus::from($source->substatus)
+      ? new TrackingSubStatus($source->substatus)
       : NULL;
     $this->map($source);
   }
