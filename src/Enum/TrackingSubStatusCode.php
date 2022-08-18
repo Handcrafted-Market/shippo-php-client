@@ -22,7 +22,7 @@ enum TrackingSubStatusCode: string {
 
   case OUT_FOR_DELIVERY = 'out_for_delivery';
 
-  case PACKAGE_ACCEPTED = 'packaged_accepted';
+  case PACKAGE_ACCEPTED = 'package_accepted';
 
   case PACKAGE_ARRIVED = 'package_arrived';
 
